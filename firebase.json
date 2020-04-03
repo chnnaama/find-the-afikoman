@@ -1,0 +1,19 @@
+{
+  "hosting": [
+    {
+      "target": "find-the-afikoman",
+      "public": "dist/find-the-afikoman",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  ]
+}

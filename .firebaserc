@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "find-the-afikoman": {
+      "hosting": {
+        "find-the-afikoman": [
+          "find-the-afikoman"
+        ]
+      }
+    }
+  }
+}
