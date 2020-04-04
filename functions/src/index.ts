@@ -2,11 +2,14 @@ import * as functions from 'firebase-functions';
 import * as storage from '@google-cloud/storage';
 const gcs = new storage.Storage();
 import { tmpdir } from 'os';
-import { join, dirname } from 'path';
+import { join, dirname, basename } from 'path';
 
-// import * as globby from 'globby';
+import * as globby from 'globby';
 import * as sharp from 'sharp';
 import * as fs from 'fs-extra';
+
+const THUMBNAILS_PREFIX = 'thumb@';
+const DZI_PREFIX = 'dzi@';
 
 // // Start writing Firebase Functions
 // // https://firebase.google.com/docs/functions/typescript
@@ -19,31 +22,32 @@ export const generateThumbs = functions.storage
   .object()
   .onFinalize(async object => {
     const bucket = gcs.bucket(object.bucket);
-    const filePath = object.name;
-    const fileName = filePath?.split('/').pop();
-    const bucketDir = dirname(filePath!);
+    const filePath = object.name as string;
+    const fileName = basename(filePath);
+    const bucketDir = dirname(filePath);
 
     const workingDir = join(tmpdir(), 'thumbs');
-    const tmpFilePath = join(workingDir, 'source.png');
+    const tmpFilePath = join(workingDir, fileName);
 
-    if (fileName!.includes('thumb@') || fileName!.includes('dzi@') || filePath!.includes('dzi@') || !object.contentType!.includes('image')) {
-      console.log('exiting function');
-      return false;
-    }
+    // ignore files already processed to prevent infinite loop
+    // ignore non-image files
+    if (isProcessed(filePath) || !object.contentType!.includes('image')) return false;
 
     // 1. Ensure thumbnail dir exists
     await fs.ensureDir(workingDir);
 
     // 2. Download Source File
-    await bucket.file(filePath!).download({
-      destination: tmpFilePath
-    });
+    await bucket
+      .file(filePath)
+      .download({
+        destination: tmpFilePath
+      });
 
     // 3. Resize the images and define an array of upload promises
     const sizes = [256];
 
     const uploadPromises = sizes.map(async size => {
-      const thumbName = `thumb@${size}_${fileName}`;
+      const thumbName = `${THUMBNAILS_PREFIX}${size}_${fileName}`;
       const thumbPath = join(workingDir, thumbName);
 
       // Resize source image
@@ -68,79 +72,76 @@ export const generateDZI = functions.storage
   .object()
   .onFinalize(async object => {
     const bucket = gcs.bucket(object.bucket);
-    const filePath = object.name;
-    const fileName = filePath?.split('/').pop();
-    const bucketDir = dirname(filePath!);
+    const filePath = object.name as string;
+    const fileName = basename(filePath);
+    const bucketDir = dirname(filePath);
 
     const workingDir = join(tmpdir(), 'dzis');
-    const tmpFilePath = join(workingDir, 'source.png');
+    const tmpFilePath = join(workingDir, fileName);
 
-    const tilesList: string[] = [];
+    const dziName = `${DZI_PREFIX}${fileName}`;
+    const dziPath = join(workingDir, dziName);
 
-    if (fileName!.includes('thumb@') || fileName!.includes('dzi@') || filePath!.includes('dzi@') || !object.contentType!.includes('image')) {
-      console.log('exiting function');
-      return false;
-    }
+    // ignore files already processed to prevent infinite loop
+    // ignore non-image files
+    if (isProcessed(filePath) || !object.contentType!.includes('image')) return false;
 
-    // 1. Ensure thumbnail dir exists
+    // Ensure dzis dir exists
     await fs.ensureDir(workingDir);
 
-    // 2. Download Source File
-    await bucket.file(filePath!).download({
-      destination: tmpFilePath
-    });
+    // Download Source File
+    await bucket
+      .file(filePath)
+      .download({
+        destination: tmpFilePath
+      });
 
     console.info('downloaded');
 
-    const dziName = `dzi@${fileName}`;
-    const dziPath = join(workingDir, dziName);
-
-    // Resize source image
+    // Tile source image and create two items:
+    // (1) dzi@{filename}.dzi xml file
+    // (2) dzi@{filename}_files folder with all the tiles
     await sharp(tmpFilePath)
       .jpeg()
       .tile({
-        size: 1024
+        size: 512
       })
       .toFile(dziPath);
 
     console.info('sharped');
 
-    async function getFiles(directory: string) {
-      const items = await fs.readdir(directory);
-      for (const item of items) {
-        const fullPath = join(directory, item);
-        const stat = await fs.stat(fullPath);
-        if (stat.isFile()) {
-          tilesList.push(fullPath);
-        } else if (stat.isDirectory()) {
-          await getFiles(fullPath);
-        }
-      }
-    }
-
-    await getFiles(dziPath + '_files');
-
-    console.info(tilesList[0], tilesList[10]);
-
-    // const tiles = await globby(`${dziPath + '_files'}/**/*`);
-    // console.info({ tiles });
-
-    // Upload to GCS
+    // Upload xml file to GCS
     await bucket.upload(dziPath + '.dzi', {
       destination: join(bucketDir, dziName + '.dzi')
     });
 
-    for (const tile of tilesList) {
-      const tileRelativePath = tile.split("_files/").pop();
-      const tileDirectory = tileRelativePath!.split('/')[0];
-      const tileFileName = tileRelativePath!.split('/')[1];
+    // get a full list of tiles
+    const tiles = await globby(`${dziPath + '_files'}/**/*`);
+
+    // upload each tile to it's rightful folder
+    for (const tile of tiles) {
+      const tilePath = tile.split(workingDir).pop() as string;
+      const tileDirectory = dirname(tilePath);
+      const tileFileName = basename(tilePath);
+
       await bucket.upload(tile, {
-        destination: join(bucketDir + '/' + dziName + '_files/'+ tileDirectory, tileFileName)
+        destination: join(bucketDir, tileDirectory, tileFileName)
       });
     }
 
     console.info('uploaded', dziPath + '.dzi', bucketDir, dziName + '.dzi');
 
-    // 5. Cleanup remove the tmp/thumbs from the filesystem
+    // Cleanup remove the tmp/dzis from the filesystem
     return fs.remove(workingDir);
   });
+
+function isProcessed(filePath: string): boolean {
+  let result = false;
+
+  [ THUMBNAILS_PREFIX, DZI_PREFIX ]
+    .forEach(prefix => {
+      if (filePath.includes(prefix)) result = true
+    });
+
+  return result;
+}
