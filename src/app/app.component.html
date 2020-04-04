@@ -1,1 +1,11 @@
-{{ auth.user | json }}
+<mat-sidenav-container class="example-container">
+  <mat-sidenav mode="side" opened="false">Sidenav content</mat-sidenav>
+  <mat-sidenav-content>
+    Main content
+<!--    <div>-->
+<!--      {{ auth.user | json }}-->
+<!--    </div>-->
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
