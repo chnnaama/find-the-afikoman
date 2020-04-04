@@ -8,8 +8,8 @@ const OSD_OPTIONS: OpenSeadragon.Options = {
   showNavigator: false, // image map
   showNavigationControl: false, // zoom, etc.
   maxZoomPixelRatio: 3,
-  springStiffness: 10,
-  animationTime: 0.3,
+  springStiffness: 24,
+  animationTime: 1,
   minZoomImageRatio: 1,
   visibilityRatio: 1, // prevent moving image outside viewport
   // crossOriginPolicy: 'Anonymous', // required for openseadragon-filtering
@@ -41,7 +41,8 @@ export class TestComponent implements OnInit {
 
     const tiledImageOptions: TiledImageOptions = {
       tileSource: '/assets/test/test.dzi',
-      fitBounds: new Rect(0, 0, 5833, 3620 )
+      fitBounds: new Rect(0, 0, 5833, 3620 ),
+      preload: true,
     };
 
     this.viewer.open(tiledImageOptions);
