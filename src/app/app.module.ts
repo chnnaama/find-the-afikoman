@@ -10,6 +10,8 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { TestComponent } from './test/test.component';
 import { MaterialModule } from './material/material.module';
 import { AfikomanComponent } from './afikoman/afikoman.component';
+import { CongratsComponent } from './congrats/congrats.component';
+import { WelcomeComponent } from './welcome/welcome.component';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyCYoShQPGulpu95s253OKdA474M11VaXDw',
@@ -26,7 +28,9 @@ const firebaseConfig = {
   declarations: [
     AppComponent,
     TestComponent,
-    AfikomanComponent
+    AfikomanComponent,
+    CongratsComponent,
+    WelcomeComponent
   ],
   imports: [
     BrowserModule,
@@ -38,6 +42,10 @@ const firebaseConfig = {
     MaterialModule,
   ],
   providers: [],
+  entryComponents: [
+    CongratsComponent,
+    WelcomeComponent,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

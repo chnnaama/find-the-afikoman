@@ -14,7 +14,7 @@ const OSD_OPTIONS: OpenSeadragon.Options = {
   visibilityRatio: 1, // prevent moving image outside viewport
   // crossOriginPolicy: 'Anonymous', // required for openseadragon-filtering
   gestureSettingsMouse: {
-    // clickToZoom: false,
+    clickToZoom: false,
     // dblClickToZoom: false,
     flickMomentum: 0
   },
@@ -53,11 +53,14 @@ export class TestComponent implements OnInit {
     //
     // });
 
-    this.viewer.addOverlay({
-      element: this.afikomanElement.el.nativeElement,
-      location,
-      checkResize: false
-    });
+    setTimeout(() => {
+      this.viewer.addOverlay({
+        element: this.afikomanElement.el.nativeElement,
+        location,
+        checkResize: false
+      });
+    }, 500);
+
 
 
   }
