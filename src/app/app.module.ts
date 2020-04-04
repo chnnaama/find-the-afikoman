@@ -12,6 +12,7 @@ import { MaterialModule } from './material/material.module';
 import { AfikomanComponent } from './afikoman/afikoman.component';
 import { CongratsComponent } from './congrats/congrats.component';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { ListComponent } from './list/list.component';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyCYoShQPGulpu95s253OKdA474M11VaXDw',
@@ -30,7 +31,8 @@ const firebaseConfig = {
     TestComponent,
     AfikomanComponent,
     CongratsComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    ListComponent
   ],
   imports: [
     BrowserModule,
