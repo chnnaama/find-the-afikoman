@@ -9,6 +9,7 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { TestComponent } from './test/test.component';
 import { MaterialModule } from './material/material.module';
+import { AfikomanComponent } from './afikoman/afikoman.component';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyCYoShQPGulpu95s253OKdA474M11VaXDw',
@@ -24,7 +25,8 @@ const firebaseConfig = {
 @NgModule({
   declarations: [
     AppComponent,
-    TestComponent
+    TestComponent,
+    AfikomanComponent
   ],
   imports: [
     BrowserModule,
