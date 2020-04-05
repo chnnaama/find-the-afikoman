@@ -15,6 +15,8 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { ListComponent } from './list/list.component';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { SpinnerComponent } from './spinner/spinner.component';
+import { UploadComponent } from './upload/upload.component';
+import { MaterialUploaderComponent } from './material-uploader/material-uploader.component';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyCYoShQPGulpu95s253OKdA474M11VaXDw',
@@ -36,6 +38,8 @@ const firebaseConfig = {
     WelcomeComponent,
     ListComponent,
     SpinnerComponent,
+    UploadComponent,
+    MaterialUploaderComponent,
   ],
   imports: [
     BrowserModule,

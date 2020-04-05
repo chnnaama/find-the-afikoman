@@ -2,6 +2,7 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import * as OpenSeadragon from 'openseadragon';
 import { Overlay, Point, Rect, TiledImageOptions } from 'openseadragon';
 import { AfikomanComponent } from '../afikoman/afikoman.component';
+import { AngularFireStorage } from '@angular/fire/storage';
 
 const OSD_OPTIONS: OpenSeadragon.Options = {
   preload: true,
@@ -31,18 +32,28 @@ export class TestComponent implements OnInit {
   @ViewChild('viewer', { static: true }) viewerElement: ElementRef;
   @ViewChild('afikoman', { static: true }) afikomanElement: AfikomanComponent;
 
-  constructor() { }
+  constructor(private storage: AngularFireStorage) { }
 
   ngOnInit(): void {
+    console.info(333);
     this.viewer = new OpenSeadragon.Viewer({
       element: this.viewerElement.nativeElement,
       ...OSD_OPTIONS
     });
 
+    this.storage.ref('default-pictures/dzi@aerial-architecture-blue-sky-buildings-466685.jpg.dzi')
+      .getDownloadURL()
+      .toPromise()
+      .then(url => this.loadTile(url));
+  }
+
+  private loadTile(url: any) {
+
     const tiledImageOptions: TiledImageOptions = {
-      tileSource: '/assets/test/test.dzi',
+      tileSource: 'https://storage.googleapis.com/find-the-afikoman.appspot.com/default-pictures/dzi@aerial-architecture-blue-sky-buildings-466685.jpg.dzi',
       fitBounds: new Rect(0, 0, 5833, 3620 ),
       preload: true,
+      // loadTilesWithAjax: true,
     };
 
     this.viewer.open(tiledImageOptions);
@@ -61,9 +72,5 @@ export class TestComponent implements OnInit {
         checkResize: false
       });
     }, 500);
-
-
-
   }
-
 }
