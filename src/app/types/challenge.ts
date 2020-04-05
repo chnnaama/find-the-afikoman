@@ -13,9 +13,10 @@ export class Challenge {
     y: 0,
     width: 500,
     height: 500,
-  }
+  };
   width: number;
   height: number;
+  public: false;
 
   constructor(id: string, uid: string) {
     this.id = id;

@@ -37,6 +37,8 @@ export class AfikomanComponent implements OnInit, OnDestroy {
   }
 
   openDialog() {
-    this.dialog.open(CongratsComponent);
+    this.dialog.open(CongratsComponent, {
+      disableClose: true
+    });
   }
 }

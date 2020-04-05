@@ -34,10 +34,10 @@ export class ChallengeComponent implements OnInit, OnDestroy {
       }),
       tap(challenge => this.loadChallenge(challenge)),
       tap(() => this.spinner.toggle(false)),
-      // tap(challenge => {
-      //   const rect = new Rect(1045, 2615, 40, 40 );
-      //   this.setAfikoman(challenge, rect);
-      // })
+      tap(challenge => {
+        const rect = new Rect(1045, 2615, 40, 40 );
+        // this.setAfikoman(challenge, rect);
+      })
     );
   }
 
@@ -65,7 +65,8 @@ export class ChallengeComponent implements OnInit, OnDestroy {
   private async setAfikoman(challenge: Challenge, rect: Rect) {
     const docRef = this.db.doc(`challenges/${challenge.id}`);
     await docRef.update( {
-      afikomanRect: { ...rect }
+      afikomanRect: { ...rect },
+      public: true,
     });
   }
 }
