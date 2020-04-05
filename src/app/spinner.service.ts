@@ -19,6 +19,10 @@ export class SpinnerService {
   }
 
   setText(value: string) {
-    this.text$.next(value);
+    let delay = 0;
+    if (this.text$.getValue()) {
+      delay = 1000; // delay only on text change
+    }
+    setTimeout(() => this.text$.next(value), delay);
   }
 }
