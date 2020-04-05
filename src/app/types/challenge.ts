@@ -16,7 +16,8 @@ export class Challenge {
   };
   width: number;
   height: number;
-  public: false;
+  public = false;
+  level: number;
 
   constructor(id: string, uid: string) {
     this.id = id;
