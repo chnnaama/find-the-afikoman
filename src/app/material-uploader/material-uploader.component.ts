@@ -27,15 +27,18 @@ export class MaterialUploaderComponent implements OnInit {
   onClick() {
     const fileUpload = document.getElementById('fileUpload') as HTMLInputElement;
     fileUpload.onchange = async () => {
+      this.spinnerService.toggle(true);
+      this.spinnerService.setText('יוצר אתגר חדש...');
       await this.createDocument();
+      this.spinnerService.setText('מעלה את התמונה...');
       await this.uploadFile(fileUpload.files[0]);
+      this.spinnerService.setText('כמעט סיימנו...');
       this.uploadFinished.emit(this.id);
     };
     fileUpload.click();
   }
 
   private uploadFile(file: File) {
-    this.spinnerService.toggle(true);
     const ref = this.storage.ref(`images/${this.auth.user.uid}/${this.id}.jpg`);
     return ref.put(file);
   }
