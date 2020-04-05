@@ -1,26 +1,20 @@
 <div class="cards">
-  <mat-card class="challenge-card" (click)="openChallenge('easy')">
+  <mat-card class="challenge-card"
+            *ngFor="let challenge of challenges$ | async"
+            (click)="openChallenge(challenge)">
     <mat-card-header>
-      <mat-card-title>קל</mat-card-title>
-      <mat-card-subtitle>קו הרקיע של ניו-יורק</mat-card-subtitle>
+      <mat-card-title>
+        <span [ngSwitch]="challenge.level">
+          <span *ngSwitchCase="1">קל</span>
+          <span *ngSwitchCase="2">בינוני</span>
+          <span *ngSwitchCase="3">קשה</span>
+        </span>
+      </mat-card-title>
+      <mat-card-subtitle>{{ challenge.description }}</mat-card-subtitle>
     </mat-card-header>
-    <img mat-card-image src="/assets/thumb.jpeg" alt="קו הרקיע של ניו-יורק">
-  </mat-card>
-
-  <mat-card class="challenge-card" (click)="openChallenge('easy')">
-    <mat-card-header>
-      <mat-card-title>בינוני</mat-card-title>
-      <mat-card-subtitle>קו הרקיע של ניו-יורק</mat-card-subtitle>
-    </mat-card-header>
-    <img mat-card-image src="/assets/thumb.jpeg" alt="קו הרקיע של ניו-יורק">
-  </mat-card>
-
-  <mat-card class="challenge-card" (click)="openChallenge('easy')">
-    <mat-card-header>
-      <mat-card-title>קשה</mat-card-title>
-      <mat-card-subtitle>קו הרקיע של ניו-יורק</mat-card-subtitle>
-    </mat-card-header>
-    <img mat-card-image src="/assets/thumb.jpeg" alt="קו הרקיע של ניו-יורק">
+    <img mat-card-image
+         src="https://storage.googleapis.com/find-the-afikoman.appspot.com/images/{{challenge.uid}}/thumb@${{challenge.id}}.jpg"
+         [alt]="challenge.description">
   </mat-card>
 </div>
 
