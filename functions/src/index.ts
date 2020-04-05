@@ -67,7 +67,7 @@ export const generateThumbs = functions.storage
 
     // update db
     const db = admin.firestore();
-    const thumbnailField = new FieldPath('postProcessing', 'thumbnail');
+    const thumbnailField = new FieldPath('postProcess', 'thumbnail');
 
     return db.doc(`images/${id}`)
       .update(thumbnailField, true);
@@ -143,10 +143,10 @@ export const generateDZI = functions.storage
 
     // update db
     const db = admin.firestore();
-    const thumbnailField = new FieldPath('postProcessing', 'thumbnail');
+    const tilesField = new FieldPath('postProcess', 'tiles');
 
     return db.doc(`images/${id}`)
-      .update(thumbnailField, true);
+      .update(tilesField, true);
   });
 
 function isProcessed(filePath: string): boolean {

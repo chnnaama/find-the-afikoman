@@ -13,7 +13,6 @@ import { ImageDocument } from '../types/imageDocument';
 export class MaterialUploaderComponent implements OnInit {
   @Output() uploadFinished = new EventEmitter<string>();
 
-  isUploading: boolean;
   id: string;
 
   constructor(private storage: AngularFireStorage,
@@ -37,7 +36,6 @@ export class MaterialUploaderComponent implements OnInit {
 
   private uploadFile(file: File) {
     this.spinnerService.toggle(true);
-    this.isUploading = true;
     const ref = this.storage.ref(`images/${this.auth.user.uid}/${this.id}.jpg`);
     return ref.put(file);
   }
