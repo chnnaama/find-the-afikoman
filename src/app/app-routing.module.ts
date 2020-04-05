@@ -4,6 +4,7 @@ import { TestComponent } from './test/test.component';
 import { ListComponent } from './list/list.component';
 import { AuthGuard } from './auth.guard';
 import { UploadComponent } from './upload/upload.component';
+import { ChallengeComponent } from './challenge/challenge.component';
 
 
 const routes: Routes = [
@@ -19,6 +20,10 @@ const routes: Routes = [
       {
         path: 'test',
         component: TestComponent
+      },
+      {
+        path: 'challenge/:challengeId',
+        component: ChallengeComponent
       },
       {
         path: 'upload',

@@ -17,6 +17,7 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import { SpinnerComponent } from './spinner/spinner.component';
 import { UploadComponent } from './upload/upload.component';
 import { MaterialUploaderComponent } from './material-uploader/material-uploader.component';
+import { ChallengeComponent } from './challenge/challenge.component';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyCYoShQPGulpu95s253OKdA474M11VaXDw',
@@ -40,6 +41,7 @@ const firebaseConfig = {
     SpinnerComponent,
     UploadComponent,
     MaterialUploaderComponent,
+    ChallengeComponent,
   ],
   imports: [
     BrowserModule,
