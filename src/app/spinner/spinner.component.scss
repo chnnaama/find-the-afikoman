@@ -10,4 +10,11 @@
   align-items: center;
   justify-content: center;
   z-index: 10000;
+  flex-direction: column;
+}
+
+p {
+  color: white;
+  margin-top: 20px;
+  font-size: 150%;
 }
