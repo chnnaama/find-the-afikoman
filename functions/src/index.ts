@@ -7,6 +7,8 @@ import { join, dirname, basename } from 'path';
 import * as globby from 'globby';
 import * as sharp from 'sharp';
 import * as fs from 'fs-extra';
+import * as admin from 'firebase-admin';
+import FieldPath = admin.firestore.FieldPath;
 
 const THUMBNAILS_PREFIX = 'thumb@';
 const DZI_PREFIX = 'dzi@';
@@ -25,6 +27,7 @@ export const generateThumbs = functions.storage
     const filePath = object.name as string;
     const fileName = basename(filePath);
     const bucketDir = dirname(filePath);
+    const id = fileName.split('.').slice(0, -1).join('.');
 
     const workingDir = join(tmpdir(), 'thumbs');
     const tmpFilePath = join(workingDir, fileName);
@@ -65,7 +68,15 @@ export const generateThumbs = functions.storage
     await Promise.all(uploadPromises);
 
     // 5. Cleanup remove the tmp/thumbs from the filesystem
-    return fs.remove(workingDir);
+    await fs.remove(workingDir);
+
+    // update db
+    const db = admin.firestore();
+    const thumbnailField = new FieldPath('postProcessing', 'thumbnail');
+
+    return db.doc(`images/${id}`)
+      .update(thumbnailField, true);
+
   });
 
 export const generateDZI = functions.storage
@@ -75,6 +86,7 @@ export const generateDZI = functions.storage
     const filePath = object.name as string;
     const fileName = basename(filePath);
     const bucketDir = dirname(filePath);
+    const id = fileName.split('.').slice(0, -1).join('.');
 
     const workingDir = join(tmpdir(), 'dzis');
     const tmpFilePath = join(workingDir, fileName);
@@ -132,7 +144,14 @@ export const generateDZI = functions.storage
     console.info('uploaded', dziPath + '.dzi', bucketDir, dziName + '.dzi');
 
     // Cleanup remove the tmp/dzis from the filesystem
-    return fs.remove(workingDir);
+    await fs.remove(workingDir);
+
+    // update db
+    const db = admin.firestore();
+    const thumbnailField = new FieldPath('postProcessing', 'thumbnail');
+
+    return db.doc(`images/${id}`)
+      .update(thumbnailField, true);
   });
 
 function isProcessed(filePath: string): boolean {
