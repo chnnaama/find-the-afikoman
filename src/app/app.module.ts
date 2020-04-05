@@ -14,6 +14,7 @@ import { CongratsComponent } from './congrats/congrats.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { ListComponent } from './list/list.component';
 import { AngularFireStorageModule } from '@angular/fire/storage';
+import { SpinnerComponent } from './spinner/spinner.component';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyCYoShQPGulpu95s253OKdA474M11VaXDw',
@@ -33,7 +34,8 @@ const firebaseConfig = {
     AfikomanComponent,
     CongratsComponent,
     WelcomeComponent,
-    ListComponent
+    ListComponent,
+    SpinnerComponent,
   ],
   imports: [
     BrowserModule,
