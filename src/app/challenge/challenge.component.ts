@@ -55,7 +55,7 @@ export class ChallengeComponent implements OnInit, OnDestroy {
     const tileSource = `https://storage.googleapis.com/find-the-afikoman.appspot.com/images/${challenge.uid}/dzi@${challenge.id}.jpg.dzi`;
     const tiledImageOptions: TiledImageOptions = {
       tileSource,
-      fitBounds: new Rect(0, 0, 5833, 3620 ), // TODO: WHY???? solves overlay issue
+      fitBounds: new Rect(0, 0, challenge.width, challenge.height ),
       preload: true,
     };
 
