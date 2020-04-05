@@ -2,7 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { SpinnerService } from '../spinner.service';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Subscription } from 'rxjs';
-import { ImageDocument } from '../types/imageDocument';
+import { Challenge } from '../types/challenge';
 
 @Component({
   selector: 'app-upload',
@@ -19,7 +19,7 @@ export class UploadComponent implements OnInit, OnDestroy {
   }
 
   onUploadFinished(id: string) {
-    const docRef = this.db.doc<ImageDocument>(`images/${id}`);
+    const docRef = this.db.doc<Challenge>(`challenges/${id}`);
     docRef.valueChanges().subscribe(image => {
       console.info(image);
       if (image.postProcess.thumbnail && image.postProcess.tiles) {

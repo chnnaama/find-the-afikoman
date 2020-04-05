@@ -69,7 +69,7 @@ export const generateThumbs = functions.storage
     const db = admin.firestore();
     const thumbnailField = new FieldPath('postProcess', 'thumbnail');
 
-    return db.doc(`images/${id}`)
+    return db.doc(`challenges/${id}`)
       .update(thumbnailField, true);
 
   });
@@ -145,7 +145,7 @@ export const generateDZI = functions.storage
     const db = admin.firestore();
     const tilesField = new FieldPath('postProcess', 'tiles');
 
-    return db.doc(`images/${id}`)
+    return db.doc(`challenges/${id}`)
       .update(tilesField, true);
   });
 

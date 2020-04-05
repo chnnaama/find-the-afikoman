@@ -3,7 +3,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { AuthService } from '../auth.service';
 import { AngularFireStorage } from '@angular/fire/storage';
 import { SpinnerService } from '../spinner.service';
-import { ImageDocument } from '../types/imageDocument';
+import { Challenge } from '../types/challenge';
 
 @Component({
   selector: 'app-material-uploader',
@@ -41,8 +41,8 @@ export class MaterialUploaderComponent implements OnInit {
   }
 
   private createDocument() {
-    const newDoc = new ImageDocument(this.id, this.auth.user.uid);
-    const newDocRef = this.db.doc<ImageDocument>(`images/${this.id}`);
+    const newDoc = new Challenge(this.id, this.auth.user.uid);
+    const newDocRef = this.db.doc<Challenge>(`challenges/${this.id}`);
     return newDocRef.set({ ...newDoc });
   }
 }
