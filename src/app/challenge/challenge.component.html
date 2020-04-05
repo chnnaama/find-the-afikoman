@@ -1,4 +1,4 @@
-<ng-container *ngIf="challenge$ | async as challenge">
+<div *ngIf="challenge$ | async as challenge" style="display: none">
   <app-afikoman [challenge]="challenge"></app-afikoman>
-</ng-container>
+</div>
 <div #viewer class="viewer"></div>

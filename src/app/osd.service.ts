@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import * as OpenSeadragon from 'openseadragon';
 import { Rect, TiledImageOptions } from 'openseadragon';
+import { BehaviorSubject } from 'rxjs';
+import { delay, take } from 'rxjs/operators';
 
 const OSD_OPTIONS: OpenSeadragon.Options = {
   preload: true,
@@ -25,6 +27,7 @@ const OSD_OPTIONS: OpenSeadragon.Options = {
 })
 export class OsdService {
   viewer: OpenSeadragon.Viewer;
+  isLoaded$: BehaviorSubject<boolean> = new BehaviorSubject(false);
 
   constructor() { }
 
@@ -33,6 +36,11 @@ export class OsdService {
       element,
       ...OSD_OPTIONS
     });
+
+    this.viewer.addHandler('tile-loaded', () => {
+      if (this.isLoaded$.getValue()) return; // prevent duplicates
+      this.isLoaded$.next(true);
+    });
   }
 
   loadTile(tiledImage: TiledImageOptions) {
@@ -40,11 +48,19 @@ export class OsdService {
   }
 
   addOverlay(element: Element, location: Rect) {
-    this.viewer.addOverlay({
-      element,
-      location,
-      checkResize: false // not sure, might improve visibility
-    });
+    this.isLoaded$
+      .pipe(
+        take(1),
+        delay(250)
+      )
+      .toPromise()
+      .then(() => {
+        this.viewer.addOverlay({
+          element,
+          location,
+          checkResize: false // not sure, might improve visibility
+        });
+      });
   }
 
   removeOverlay(element: Element) {
