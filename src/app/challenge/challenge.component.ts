@@ -35,7 +35,12 @@ export class ChallengeComponent implements OnInit, OnDestroy {
       tap(challenge => this.loadChallenge(challenge)),
       tap(() => this.spinner.toggle(false)),
       tap(challenge => {
-        const rect = new Rect(1045, 2615, 40, 40 );
+        const rect = new Rect(
+          3900,
+          2910,
+          100,
+          100,
+        );
         // this.setAfikoman(challenge, rect);
       })
     );
@@ -64,9 +69,14 @@ export class ChallengeComponent implements OnInit, OnDestroy {
 
   private async setAfikoman(challenge: Challenge, rect: Rect) {
     const docRef = this.db.doc(`challenges/${challenge.id}`);
-    await docRef.update( {
+    const data: Partial<Challenge> = {
       afikomanRect: { ...rect },
       public: true,
-    });
+      photoCreditUrl: 'https://www.pexels.com/photo/school-colorful-figures-toys-2953771/',
+      photoCredit: 'Markus Spiske',
+      description: 'לגו',
+      level: 2
+    };
+    await docRef.update(data);
   }
 }

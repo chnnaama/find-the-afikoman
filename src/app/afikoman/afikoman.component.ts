@@ -26,6 +26,12 @@ export class AfikomanComponent implements OnInit, OnDestroy {
       this.challenge.afikomanRect.width,
       this.challenge.afikomanRect.height
     );
+    // const location = new Rect(
+    //   3900,
+    //   2910,
+    //   100,
+    //   100,
+    // );
     this.osdService.addOverlay(
       this.el.nativeElement,
       location
