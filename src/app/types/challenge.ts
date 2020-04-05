@@ -8,6 +8,12 @@ export class Challenge {
   description = '';
   photoCredit = '';
   photoCreditUrl = '';
+  afikomanRect = {
+    x: 0,
+    y: 0,
+    width: 500,
+    height: 500,
+  };
 
   constructor(id: string, uid: string) {
     this.id = id;
