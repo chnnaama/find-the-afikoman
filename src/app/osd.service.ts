@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import * as OpenSeadragon from 'openseadragon';
-import { TiledImageOptions } from 'openseadragon';
+import { Rect, TiledImageOptions } from 'openseadragon';
 
 const OSD_OPTIONS: OpenSeadragon.Options = {
   preload: true,
@@ -39,4 +39,19 @@ export class OsdService {
     this.viewer.open(tiledImage);
   }
 
+  addOverlay(element: Element, location: Rect) {
+    this.viewer.addOverlay({
+      element,
+      location,
+      checkResize: false // not sure, might improve visibility
+    });
+  }
+
+  removeOverlay(element: Element) {
+    this.viewer.removeOverlay(element);
+  }
+
+  destroy() {
+    this.viewer.destroy();
+  }
 }

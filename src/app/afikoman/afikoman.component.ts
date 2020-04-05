@@ -1,20 +1,39 @@
-import { Component, ElementRef, OnInit } from '@angular/core';
+import { Component, ElementRef, Input, OnDestroy, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { CongratsComponent } from '../congrats/congrats.component';
 import { WelcomeComponent } from '../welcome/welcome.component';
+import { Challenge } from '../types/challenge';
+import { OsdService } from '../osd.service';
+import { Rect } from 'openseadragon';
 
 @Component({
   selector: 'app-afikoman',
   templateUrl: './afikoman.component.html',
   styleUrls: ['./afikoman.component.scss']
 })
-export class AfikomanComponent implements OnInit {
+export class AfikomanComponent implements OnInit, OnDestroy {
+  @Input() challenge: Challenge;
 
   constructor(public el: ElementRef,
-              public dialog: MatDialog) { }
+              public dialog: MatDialog,
+              private osdService: OsdService) { }
 
   ngOnInit(): void {
     this.dialog.open(WelcomeComponent);
+    const location = new Rect(
+      this.challenge.afikomanRect.x,
+      this.challenge.afikomanRect.y,
+      this.challenge.afikomanRect.width,
+      this.challenge.afikomanRect.height
+    );
+    this.osdService.addOverlay(
+      this.el.nativeElement,
+      location
+    );
+  }
+
+  ngOnDestroy(): void {
+    this.osdService.removeOverlay(this.el.nativeElement);
   }
 
   openDialog() {

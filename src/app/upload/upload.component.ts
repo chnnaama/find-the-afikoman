@@ -3,6 +3,7 @@ import { SpinnerService } from '../spinner.service';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Subscription } from 'rxjs';
 import { Challenge } from '../types/challenge';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-upload',
@@ -13,6 +14,7 @@ export class UploadComponent implements OnInit, OnDestroy {
   sub: Subscription;
 
   constructor(private spinnerService: SpinnerService,
+              private router: Router,
               private db: AngularFirestore) { }
 
   ngOnInit(): void {
@@ -20,10 +22,10 @@ export class UploadComponent implements OnInit, OnDestroy {
 
   onUploadFinished(id: string) {
     const docRef = this.db.doc<Challenge>(`challenges/${id}`);
-    docRef.valueChanges().subscribe(image => {
-      console.info(image);
-      if (image.postProcess.thumbnail && image.postProcess.tiles) {
+    this.sub = docRef.valueChanges().subscribe(challenge => {
+      if (challenge.postProcess.thumbnail && challenge.postProcess.tiles) {
         this.spinnerService.toggle(false);
+        this.router.navigate(['/challenge', id]);
       }
     });
   }

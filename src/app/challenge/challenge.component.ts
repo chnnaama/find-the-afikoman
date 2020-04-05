@@ -42,6 +42,7 @@ export class ChallengeComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
+    this.osdService.destroy();
   }
 
   private loadChallenge(challenge: Challenge) {
@@ -63,6 +64,8 @@ export class ChallengeComponent implements OnInit, OnDestroy {
 
   private async setAfikoman(challenge: Challenge, rect: Rect) {
     const docRef = this.db.doc(`challenges/${challenge.id}`);
-    await docRef.update( { afikomanRect: { ...rect } });
+    await docRef.update( {
+      afikomanRect: { ...rect }
+    });
   }
 }
