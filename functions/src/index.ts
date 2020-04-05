@@ -27,8 +27,10 @@ export const generateThumbs = functions.storage
     const workingDir = join(tmpdir(), 'thumbs');
     const tmpFilePath = join(workingDir, fileName);
 
+    const thumbName = `${THUMBNAILS_PREFIX}$${fileName}`;
+    const thumbPath = join(workingDir, thumbName);
+
     // ignore files already processed to prevent infinite loop
-    // ignore non-image files
     if (isProcessed(filePath) || !object.contentType!.includes('image')) return false;
 
     // 1. Ensure thumbnail dir exists
@@ -41,36 +43,38 @@ export const generateThumbs = functions.storage
         destination: tmpFilePath
       });
 
-    // 3. Resize the images and define an array of upload promises
-    const sizes = [256];
+    // Resize source image
+    await sharp(tmpFilePath)
+      .rotate()
+      .resize({ width: 400 })
+      .toFile(thumbPath);
 
-    const uploadPromises = sizes.map(async size => {
-      const thumbName = `${THUMBNAILS_PREFIX}${size}_${fileName}`;
-      const thumbPath = join(workingDir, thumbName);
-
-      // Resize source image
-      await sharp(tmpFilePath)
-        .resize(size, size)
-        .toFile(thumbPath);
-
-      // Upload to GCS
-      return bucket.upload(thumbPath, {
-        destination: join(bucketDir, thumbName)
-      });
+    // Upload to GCS
+    await bucket.upload(thumbPath, {
+      destination: join(bucketDir, thumbName)
     });
 
-    // 4. Run the upload operations
-    await Promise.all(uploadPromises);
 
-    // 5. Cleanup remove the tmp/thumbs from the filesystem
-    await fs.remove(workingDir);
 
     // update db
     const db = admin.firestore();
     const thumbnailField = new FieldPath('postProcess', 'thumbnail');
+    const docRef = db.doc(`challenges/${id}`);
 
-    return db.doc(`challenges/${id}`)
-      .update(thumbnailField, true);
+    const metadata = await sharp(tmpFilePath)
+      .metadata();
+
+    console.info({ metadata });
+
+    await docRef.update({
+        width: [6, 8].includes(metadata.orientation as number) ? metadata.height : metadata.width,
+        height: [6, 8].includes(metadata.orientation as number) ? metadata.width : metadata.height,
+      });
+
+    await docRef.update(thumbnailField, true);
+
+    // 5. Cleanup remove the tmp/thumbs from the filesystem
+    return fs.remove(workingDir);
 
   });
 
@@ -109,6 +113,7 @@ export const generateDZI = functions.storage
     // (1) dzi@{filename}.dzi xml file
     // (2) dzi@{filename}_files folder with all the tiles
     await sharp(tmpFilePath)
+      .rotate()
       .jpeg()
       .tile({
         size: 512
