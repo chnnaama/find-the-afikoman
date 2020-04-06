@@ -3,13 +3,14 @@
   <p>
     <img src="https://i.pinimg.com/originals/e1/59/f4/e159f454b9411d0e92b6395b52258606.gif" />
   </p>
-  <p style="margin-bottom: 16px">
-  מצאת את האפיקומן תוך {{ stopwatch.counter | date:'mm:ss' }} שניות
+  <p style="margin-bottom: 16px">מצאת את האפיקומן ב-{{ stopwatch.counter / 1000 |  number:'1.0-0' }} שניות
   </p>
 
   <p>
     <a mat-button [routerLink]="'/'" [mat-dialog-close]="">אתגרים אחרים</a>
     &nbsp;
-    <button mat-raised-button color="primary">שתפו</button>
+    <app-share-button
+      text=" מצאתי את האפיקומן ב-{{ stopwatch.counter / 1000 |  number:'1.0-0' }} שניות"
+      [url]="'https://find-the-afikoman.web.app/' + challengeService.challenge.id"></app-share-button>
   </p>
 </div>

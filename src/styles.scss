@@ -3,7 +3,7 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Rubik, "Helvetica Neue", sans-serif; direction: rtl; }
 
-mat-dialog-container {
+mat-dialog-container, snack-bar-container {
   direction: rtl;
 }
 

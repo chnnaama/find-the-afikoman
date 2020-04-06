@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { ChallengeService } from '../challenge.service';
 
 @Component({
   selector: 'app-welcome',
@@ -8,12 +9,11 @@ import { MatDialog } from '@angular/material/dialog';
 })
 export class WelcomeComponent implements OnInit {
 
-  constructor(public dialog: MatDialog) { }
+
+  constructor(public challengeService: ChallengeService)
+              { }
 
   ngOnInit(): void {
   }
 
-  start() {
-    this.dialog.closeAll();
-  }
 }

@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
-import { ShareDialogComponent } from '../share-dialog/share-dialog.component';
+import { Component, Input, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { Clipboard } from '@angular/cdk/clipboard';
+import { Challenge } from '../types/challenge';
 
 @Component({
   selector: 'app-share-button',
@@ -8,8 +9,11 @@ import { ShareDialogComponent } from '../share-dialog/share-dialog.component';
   styleUrls: ['./share-button.component.scss']
 })
 export class ShareButtonComponent implements OnInit {
+  @Input() text: string;
+  @Input() url: string;
 
-  constructor(public dialog: MatDialog) { }
+  constructor(private snackBar: MatSnackBar,
+              private clipboard: Clipboard) { }
 
   ngOnInit(): void {
   }
@@ -19,15 +23,19 @@ export class ShareButtonComponent implements OnInit {
     if (navigator.share) {
       // @ts-ignore
       navigator.share({
-        title: 'שלום שלום',
-        text: 'להתראות להתראות',
-        url: 'https://codepen.io/ayoisaiah/pen/YbNazJ'
+        title: 'אתגר האפיקומן',
+        text: this.text,
+        url: this.url,
       }).then(() => {
         console.log('Thanks for sharing!');
       })
         .catch(console.error);
     } else {
-      this.dialog.open(ShareDialogComponent);
+      this.clipboard.copy(`${this.text} ${this.url}`);
+      const message = 'הקישור הועתק!';
+      this.snackBar.open(message, '', {
+        duration: 3000,
+      });
     }
   }
 }

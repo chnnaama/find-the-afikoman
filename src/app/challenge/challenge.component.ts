@@ -10,6 +10,7 @@ import { Rect, TiledImageOptions } from 'openseadragon';
 import { WelcomeComponent } from '../welcome/welcome.component';
 import { MatDialog } from '@angular/material/dialog';
 import { StopwatchService } from '../stopwatch.service';
+import { ChallengeService } from '../challenge.service';
 
 @Component({
   selector: 'app-challenge',
@@ -21,6 +22,7 @@ export class ChallengeComponent implements OnInit, OnDestroy {
   @ViewChild('viewer', { static: true }) viewerElement: ElementRef;
 
   constructor(private route: ActivatedRoute,
+              private challengeService: ChallengeService,
               private spinner: SpinnerService,
               private osdService: OsdService,
               private dialog: MatDialog,
@@ -41,6 +43,7 @@ export class ChallengeComponent implements OnInit, OnDestroy {
         const docRef = this.db.doc<Challenge>(`challenges/${challengeId}`);
         return docRef.valueChanges();
       }),
+      tap(challenge => this.challengeService.challenge = challenge),
       tap(challenge => this.loadChallenge(challenge)),
       tap(() => this.spinner.toggle(false)),
       tap(challenge => {

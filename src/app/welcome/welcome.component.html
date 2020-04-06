@@ -1,9 +1,10 @@
 <h1>חג שמח!</h1>
-<p>מעניין כמה זמן יקח לך למצוא את...</p>
+<p>נראה כמה זמן יקח לך למצוא את...</p>
 <p>
   <img src="/assets/afikoman.jpeg" />
 </p>
 <h2>האפיקומן!</h2>
 <p>
-  <button mat-raised-button color="primary" (click)="start()">צאו לדרך!</button>
+  <app-share-button text="כמה זמן יקח לך למצוא את האפיקומן?" [url]="'https://find-the-afikoman.web.app/' + challengeService.challenge?.id"></app-share-button>
+  <button mat-raised-button color="primary" style="margin-right: 16px" [mat-dialog-close]="">צאו לדרך!</button>
 </p>
