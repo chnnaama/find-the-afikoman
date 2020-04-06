@@ -20,6 +20,8 @@ import { MaterialUploaderComponent } from './material-uploader/material-uploader
 import { ChallengeComponent } from './challenge/challenge.component';
 import { StopwatchComponent } from './stopwatch/stopwatch.component';
 import { PauseComponent } from './pause/pause.component';
+import { ShareButtonComponent } from './share-button/share-button.component';
+import { ShareDialogComponent } from './share-dialog/share-dialog.component';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyCYoShQPGulpu95s253OKdA474M11VaXDw',
@@ -46,6 +48,8 @@ const firebaseConfig = {
     ChallengeComponent,
     StopwatchComponent,
     PauseComponent,
+    ShareButtonComponent,
+    ShareDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -62,6 +66,7 @@ const firebaseConfig = {
     CongratsComponent,
     WelcomeComponent,
     PauseComponent,
+    ShareDialogComponent
   ],
   bootstrap: [AppComponent]
 })

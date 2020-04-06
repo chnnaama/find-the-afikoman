@@ -35,16 +35,7 @@ export class TestComponent implements OnInit {
   constructor(private storage: AngularFireStorage) { }
 
   ngOnInit(): void {
-    console.info(333);
-    this.viewer = new OpenSeadragon.Viewer({
-      element: this.viewerElement.nativeElement,
-      ...OSD_OPTIONS
-    });
 
-    this.storage.ref('default-pictures/dzi@aerial-architecture-blue-sky-buildings-466685.jpg.dzi')
-      .getDownloadURL()
-      .toPromise()
-      .then(url => this.loadTile(url));
   }
 
   private loadTile(url: any) {
