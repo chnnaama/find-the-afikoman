@@ -18,6 +18,8 @@ import { SpinnerComponent } from './spinner/spinner.component';
 import { UploadComponent } from './upload/upload.component';
 import { MaterialUploaderComponent } from './material-uploader/material-uploader.component';
 import { ChallengeComponent } from './challenge/challenge.component';
+import { StopwatchComponent } from './stopwatch/stopwatch.component';
+import { PauseComponent } from './pause/pause.component';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyCYoShQPGulpu95s253OKdA474M11VaXDw',
@@ -42,6 +44,8 @@ const firebaseConfig = {
     UploadComponent,
     MaterialUploaderComponent,
     ChallengeComponent,
+    StopwatchComponent,
+    PauseComponent,
   ],
   imports: [
     BrowserModule,
@@ -57,6 +61,7 @@ const firebaseConfig = {
   entryComponents: [
     CongratsComponent,
     WelcomeComponent,
+    PauseComponent,
   ],
   bootstrap: [AppComponent]
 })

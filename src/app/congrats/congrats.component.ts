@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { StopwatchService } from '../stopwatch.service';
 
 @Component({
   selector: 'app-congrats',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CongratsComponent implements OnInit {
 
-  constructor() { }
+  constructor(public stopwatch: StopwatchService) { }
 
   ngOnInit(): void {
+    this.stopwatch.toggleTimer();
   }
 
 }

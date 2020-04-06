@@ -1,0 +1,7 @@
+<div class="time">
+  {{ stopwatch.counter | date:'mm:ss:SS' }}
+</div>
+<button mat-mini-fab aria-label="Example icon-button with a heart icon" (click)="pauseTimer()">
+  <mat-icon *ngIf="stopwatch.running">pause</mat-icon>
+  <mat-icon *ngIf="!stopwatch.running">play_arrow</mat-icon>
+</button>

@@ -7,6 +7,9 @@ import { map, switchMap, tap } from 'rxjs/operators';
 import { SpinnerService } from '../spinner.service';
 import { OsdService } from '../osd.service';
 import { Rect, TiledImageOptions } from 'openseadragon';
+import { WelcomeComponent } from '../welcome/welcome.component';
+import { MatDialog } from '@angular/material/dialog';
+import { StopwatchService } from '../stopwatch.service';
 
 @Component({
   selector: 'app-challenge',
@@ -20,11 +23,17 @@ export class ChallengeComponent implements OnInit, OnDestroy {
   constructor(private route: ActivatedRoute,
               private spinner: SpinnerService,
               private osdService: OsdService,
+              private dialog: MatDialog,
+              private stopWatch: StopwatchService,
               private db: AngularFirestore) {
     this.spinner.toggle(true);
   }
 
   ngOnInit(): void {
+    this.dialog.open(WelcomeComponent)
+      .afterClosed()
+      .toPromise()
+      .then(() => this.stopWatch.toggleTimer());
 
     this.challenge$ = this.route.params.pipe(
       map(params => params.challengeId),

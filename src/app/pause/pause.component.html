@@ -1,0 +1,17 @@
+<h1 mat-dialog-title>האתגר:</h1>
+<div mat-dialog-content>
+  <p>
+    <img src="/assets/afikoman.jpeg" />
+  </p>
+  <p style="margin-bottom: 16px">מצאו את האפיקומן ולחצו עליו</p>
+  <p class="credit">
+    <span>צילום: </span>
+    <a [href]="stopwatch.challenge.photoCreditUrl">{{ stopwatch.challenge.photoCredit }}</a>
+  </p>
+</div>
+<div mat-dialog-actions>
+  <p>
+    <a mat-button [routerLink]="'/'" [mat-dialog-close]="">אתגרים אחרים</a>
+    <button mat-button [mat-dialog-close]="" cdkFocusInitial>קדימה!</button>
+  </p>
+</div>
