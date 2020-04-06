@@ -12,3 +12,16 @@
   font-size: 24px;
   margin-left: 16px;
 }
+
+@media screen
+and (max-width: 480px)
+and (orientation: portrait) {
+  :host {
+    left: 8px;
+    height: 56px;
+  }
+
+  .time {
+    font-size: 16px;
+  }
+}
