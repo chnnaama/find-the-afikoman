@@ -1,7 +1,6 @@
 import { Component, ElementRef, Input, OnDestroy, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { CongratsComponent } from '../congrats/congrats.component';
-import { WelcomeComponent } from '../welcome/welcome.component';
 import { Challenge } from '../types/challenge';
 import { OsdService } from '../osd.service';
 import { Rect } from 'openseadragon';
@@ -19,7 +18,6 @@ export class AfikomanComponent implements OnInit, OnDestroy {
               private osdService: OsdService) { }
 
   ngOnInit(): void {
-    this.dialog.open(WelcomeComponent);
     const location = new Rect(
       this.challenge.afikomanRect.x,
       this.challenge.afikomanRect.y,
