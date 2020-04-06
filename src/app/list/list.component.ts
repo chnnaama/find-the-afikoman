@@ -25,4 +25,8 @@ export class ListComponent implements OnInit {
   openChallenge(challenge: Challenge) {
     this.router.navigate(['/challenge', challenge.id]);
   }
+
+  createChallenge() {
+    this.router.navigate(['/upload']);
+  }
 }
