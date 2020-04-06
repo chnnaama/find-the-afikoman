@@ -46,7 +46,8 @@ export const generateThumbs = functions.storage
     // Resize source image
     await sharp(tmpFilePath)
       .rotate()
-      .resize({ width: 400 })
+      .jpeg()
+      .resize(400, 250)
       .toFile(thumbPath);
 
     // Upload to GCS
