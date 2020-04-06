@@ -12,12 +12,14 @@ import { Rect } from 'openseadragon';
 })
 export class AfikomanComponent implements OnInit, OnDestroy {
   @Input() challenge: Challenge;
+  isVisible = false;
 
   constructor(public el: ElementRef,
               public dialog: MatDialog,
               private osdService: OsdService) { }
 
   ngOnInit(): void {
+    setTimeout(() => this.isVisible = true, 1000);
     const location = new Rect(
       this.challenge.afikomanRect.x,
       this.challenge.afikomanRect.y,
