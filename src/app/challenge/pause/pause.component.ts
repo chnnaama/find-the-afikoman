@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Challenge } from '../types/challenge';
-import { StopwatchService } from '../stopwatch.service';
+import { Challenge } from '../../types/challenge';
+import { StopwatchService } from '../../stopwatch.service';
 
 @Component({
   selector: 'app-pause',

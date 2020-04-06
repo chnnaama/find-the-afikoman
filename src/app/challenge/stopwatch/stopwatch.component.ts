@@ -1,8 +1,8 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
-import { StopwatchService } from '../stopwatch.service';
+import { StopwatchService } from '../../stopwatch.service';
 import { MatDialog } from '@angular/material/dialog';
 import { PauseComponent } from '../pause/pause.component';
-import { Challenge } from '../types/challenge';
+import { Challenge } from '../../types/challenge';
 
 @Component({
   selector: 'app-stopwatch',

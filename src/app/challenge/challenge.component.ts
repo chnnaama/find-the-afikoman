@@ -7,7 +7,7 @@ import { map, switchMap, tap } from 'rxjs/operators';
 import { SpinnerService } from '../spinner.service';
 import { OsdService } from '../osd.service';
 import { Rect, TiledImageOptions } from 'openseadragon';
-import { WelcomeComponent } from '../welcome/welcome.component';
+import { WelcomeComponent } from './welcome/welcome.component';
 import { MatDialog } from '@angular/material/dialog';
 import { StopwatchService } from '../stopwatch.service';
 import { ChallengeService } from '../challenge.service';

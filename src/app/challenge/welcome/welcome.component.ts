@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { ChallengeService } from '../challenge.service';
+import { ChallengeService } from '../../challenge.service';
 
 @Component({
   selector: 'app-welcome',

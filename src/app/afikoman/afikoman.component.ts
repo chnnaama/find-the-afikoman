@@ -1,6 +1,6 @@
 import { Component, ElementRef, Input, OnDestroy, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { CongratsComponent } from '../congrats/congrats.component';
+import { CongratsComponent } from '../challenge/congrats/congrats.component';
 import { Challenge } from '../types/challenge';
 import { OsdService } from '../osd.service';
 import { Rect } from 'openseadragon';
