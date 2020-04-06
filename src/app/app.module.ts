@@ -22,6 +22,8 @@ import { StopwatchComponent } from './stopwatch/stopwatch.component';
 import { PauseComponent } from './pause/pause.component';
 import { ShareButtonComponent } from './share-button/share-button.component';
 import { ClipboardModule } from '@angular/cdk/clipboard';
+import { EditComponent } from './edit/edit.component';
+import { InstructionsComponent } from './edit/instructions/instructions.component';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyCYoShQPGulpu95s253OKdA474M11VaXDw',
@@ -49,6 +51,8 @@ const firebaseConfig = {
     StopwatchComponent,
     PauseComponent,
     ShareButtonComponent,
+    EditComponent,
+    InstructionsComponent,
   ],
   imports: [
     BrowserModule,
@@ -67,6 +71,7 @@ const firebaseConfig = {
     CongratsComponent,
     WelcomeComponent,
     PauseComponent,
+    InstructionsComponent,
   ],
   bootstrap: [AppComponent]
 })
