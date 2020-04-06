@@ -18,6 +18,7 @@ export class ListComponent implements OnInit {
   ngOnInit(): void {
     const colRef = this.db.collection<Challenge>('challenges', ref => ref
       .where('public', '==', true)
+      .orderBy('level')
     );
     this.challenges$ = colRef.valueChanges();
   }
