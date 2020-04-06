@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import * as OpenSeadragon from 'openseadragon';
 import { Rect, TiledImageOptions } from 'openseadragon';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Subject } from 'rxjs';
 import { delay, take } from 'rxjs/operators';
 
 const OSD_OPTIONS: OpenSeadragon.Options = {
@@ -28,6 +28,8 @@ const OSD_OPTIONS: OpenSeadragon.Options = {
 export class OsdService {
   viewer: OpenSeadragon.Viewer;
   isLoaded$: BehaviorSubject<boolean> = new BehaviorSubject(false);
+  canvasClick$: Subject<any> = new Subject();
+  isClickQuick: boolean;
 
   constructor() { }
 
@@ -40,6 +42,11 @@ export class OsdService {
     this.viewer.addHandler('tile-loaded', () => {
       if (this.isLoaded$.getValue()) return; // prevent duplicates
       this.isLoaded$.next(true);
+    });
+
+    this.viewer.addHandler('canvas-click', (event) => {
+      this.isClickQuick = event.quick;
+      this.canvasClick$.next(event);
     });
   }
 
@@ -69,5 +76,9 @@ export class OsdService {
 
   destroy() {
     this.viewer.destroy();
+  }
+
+  removeAllOverlays() {
+    this.viewer.clearOverlays();
   }
 }

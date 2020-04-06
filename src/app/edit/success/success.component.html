@@ -1,0 +1,12 @@
+<h1 mat-dialog-title>אפיקומן נולד!</h1>
+<div mat-dialog-content>
+  <p>עכשיו אפשר לשתף את האתגר החדש שיצרת עם חברים ובני משפחה.</p>
+</div>
+<div mat-dialog-actions>
+  <a mat-button [routerLink]="'/'" [mat-dialog-close]="">חזרה לרשימת אתגרים</a>
+  &nbsp;
+  <app-share-button
+    text="החבאתי את האפיקומן. תצליחו למצוא?"
+    [url]="'https://find-the-afikoman.web.app/challenge/' + challengeService.challenge.id"></app-share-button>
+
+</div>

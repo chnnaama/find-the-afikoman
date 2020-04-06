@@ -25,7 +25,7 @@ export class UploadComponent implements OnInit, OnDestroy {
     this.sub = docRef.valueChanges().subscribe(challenge => {
       if (challenge.postProcess.thumbnail && challenge.postProcess.tiles) {
         this.spinnerService.toggle(false);
-        this.router.navigate(['/challenge', id]);
+        this.router.navigate(['/edit', id]);
       }
     });
   }
