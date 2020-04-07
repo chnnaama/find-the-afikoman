@@ -16,7 +16,7 @@ const OSD_OPTIONS: OpenSeadragon.Options = {
   // crossOriginPolicy: 'Anonymous', // required for openseadragon-filtering
   gestureSettingsMouse: {
     clickToZoom: false,
-    // dblClickToZoom: false,
+    dblClickToZoom: false,
     flickMomentum: 0
   },
   // preserveImageSizeOnResize: false
