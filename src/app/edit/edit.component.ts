@@ -127,4 +127,9 @@ export class EditComponent implements OnInit, OnDestroy {
       disableClose: true
     });
   }
+
+  onHelpClick() {
+    this.dialog.open(InstructionsComponent);
+  }
+
 }
