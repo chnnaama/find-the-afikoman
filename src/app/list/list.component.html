@@ -1,5 +1,19 @@
 <div class="cards">
   <mat-card class="challenge-card"
+            *ngFor="let challenge of privateChallenges$ | async"
+            (click)="openChallenge(challenge)">
+    <mat-card-header>
+      <mat-card-title>
+        אתגר שאני הכנתי
+      </mat-card-title>
+      <mat-card-subtitle>ניתן לשתף</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image
+         src="https://storage.googleapis.com/find-the-afikoman.appspot.com/images/{{challenge.uid}}/thumb@${{challenge.id}}.jpg"
+         [alt]="challenge.description">
+  </mat-card>
+
+  <mat-card class="challenge-card"
             *ngFor="let challenge of challenges$ | async"
             (click)="openChallenge(challenge)">
     <mat-card-header>
