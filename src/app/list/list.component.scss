@@ -14,7 +14,17 @@ footer {
   font-size: 90%;
   color: #979EA0;
   text-align: center;
+
+  a {
+    color: #c2cbce !important;
+  }
 }
-a {
-  color: #c2cbce !important;
+
+.utility-buttons {
+  position: absolute;
+  top: 0;
+  left: 10px;
+  height: 64px;
+  display: flex;
+  align-items: center;
 }
