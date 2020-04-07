@@ -79,7 +79,7 @@ export class EditComponent implements OnInit, OnDestroy {
       height: challenge.width / 10
     };
 
-    this.placeAfikoman();
+    this.initializeAfikoman();
   }
 
   private async saveChallenge(challenge: Challenge) {
@@ -97,14 +97,27 @@ export class EditComponent implements OnInit, OnDestroy {
     this.placeAfikoman();
   }
 
+
+  private initializeAfikoman() {
+    this.osdService.removeAllOverlays();
+    const rect = new Rect(
+      this.afikomanPlacement.x,
+      this.afikomanPlacement.y,
+      this.afikomanPlacement.width,
+      this.afikomanPlacement.height);
+    this.osdService.addOverlay(
+      this.afikomanElement.nativeElement,
+      rect
+    );
+  }
+
   private placeAfikoman() {
     const rect = new Rect(
       this.afikomanPlacement.x,
       this.afikomanPlacement.y,
       this.afikomanPlacement.width,
       this.afikomanPlacement.height);
-    this.osdService.removeAllOverlays();
-    this.osdService.addOverlay(
+    this.osdService.updateOverlay(
       this.afikomanElement.nativeElement,
       rect
     );

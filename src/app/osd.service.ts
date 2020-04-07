@@ -70,6 +70,10 @@ export class OsdService {
       });
   }
 
+  updateOverlay(element: Element, location: Rect) {
+    this.viewer.updateOverlay(element, location);
+  }
+
   removeOverlay(element: Element) {
     this.viewer.removeOverlay(element);
   }
