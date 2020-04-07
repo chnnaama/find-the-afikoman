@@ -18,5 +18,9 @@ $custom-typography: mat-typography-config(
 @include angular-material-typography($custom-typography);
 
 .afikoman {
-  display: block !important;
+  display: block !important; // OSD bug after hiding overlay
+}
+
+* {
+  touch-action: manipulation; // prevent double click to zoom
 }
