@@ -3,7 +3,7 @@
   <p>
     <img src="/assets/afikoman.jpeg" />
   </p>
-  <p style="margin-bottom: 16px">מצאו את האפיקומן ולחצו עליו</p>
+  <p style="margin-bottom: 16px">מצאו בתמונה את האפיקומן ולחצו עליו</p>
   <p class="credit">
     <span>צילום: </span>
     <a [href]="stopwatch.challenge.photoCreditUrl">{{ stopwatch.challenge.photoCredit }}</a>
@@ -12,6 +12,6 @@
 <div mat-dialog-actions>
   <p>
     <a mat-button [routerLink]="'/'" [mat-dialog-close]="">אתגרים נוספים</a>
-    <button mat-button [mat-dialog-close]="" color="primary" cdkFocusInitial>קדימה!</button>
+    <button mat-flat-button [mat-dialog-close]="" color="primary" cdkFocusInitial>קדימה!</button>
   </p>
 </div>
