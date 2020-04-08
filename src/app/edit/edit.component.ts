@@ -124,7 +124,7 @@ export class EditComponent implements OnInit, OnDestroy {
   }
 
   resize(change: number) {
-    if (change < 0 && this.afikomanPlacement.width / this.challengeService.challenge.width < 0.005) return;
+    if (change < 0 && this.afikomanPlacement.width / this.challengeService.challenge.width < 0.004) return;
     if (change > 0 && this.afikomanPlacement.width / this.challengeService.challenge.width > 0.2) return;
 
     this.afikomanPlacement.width = (10 + change) / 10 * this.afikomanPlacement.width;
@@ -134,7 +134,13 @@ export class EditComponent implements OnInit, OnDestroy {
 
   async onFinish() {
     const challenge = this.challengeService.challenge;
-    challenge.afikomanRect = { ...this.afikomanPlacement };
+    // challenge.afikomanRect = { ...this.afikomanPlacement };
+    // challenge.photoCredit = 'stock.adobe.com';
+    // challenge.photoCreditUrl = 'https://stock.adobe.com';
+    // challenge.description = 'הר רשמור, ארצות-הברית';
+    // challenge.level = 2;
+    // challenge.public = true;
+
     await this.saveChallenge(challenge);
     this.dialog.open(SuccessComponent, {
       disableClose: true
