@@ -8,7 +8,7 @@ const OSD_OPTIONS: OpenSeadragon.Options = {
   preload: true,
   showNavigator: false, // image map
   showNavigationControl: false, // zoom, etc.
-  maxZoomPixelRatio: 3,
+  maxZoomPixelRatio: 2,
   springStiffness: 3,
   animationTime: 0.5,
   minZoomImageRatio: 1,
