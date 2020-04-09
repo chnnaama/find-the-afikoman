@@ -9,8 +9,8 @@ const OSD_OPTIONS: OpenSeadragon.Options = {
   showNavigator: false, // image map
   showNavigationControl: false, // zoom, etc.
   maxZoomPixelRatio: 2,
-  springStiffness: 3,
-  animationTime: 0.5,
+  // springStiffness: 3,
+  // animationTime: 0.5,
   minZoomImageRatio: 1,
   visibilityRatio: 1, // prevent moving image outside viewport
   // crossOriginPolicy: 'Anonymous', // required for openseadragon-filtering
