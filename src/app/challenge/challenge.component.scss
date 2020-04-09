@@ -11,6 +11,10 @@
 
 .tick-animation {
   animation: fadein 2s ease 0s infinite;
+
+  &.cold {
+    background-color: #1976d2 !important;
+  }
 }
 
 @keyframes fadein{
