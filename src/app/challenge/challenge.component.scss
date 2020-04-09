@@ -2,3 +2,19 @@
   width: 100%;
   height: calc(100% - 64px);
 }
+
+.utility-buttons {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+}
+
+.tick-animation {
+  animation: fadein 2s ease 0s infinite;
+}
+
+@keyframes fadein{
+  0% { opacity:0; }
+  50% { opacity:1; }
+  100% { opacity:0; }
+}

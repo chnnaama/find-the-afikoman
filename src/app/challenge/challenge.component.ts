@@ -1,16 +1,17 @@
 import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Observable, Subscription } from 'rxjs';
+import { BehaviorSubject, Observable, Subject, Subscription } from 'rxjs';
 import { Challenge } from '../types/challenge';
 import { AngularFirestore } from '@angular/fire/firestore';
-import { map, switchMap, tap } from 'rxjs/operators';
+import { map, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { SpinnerService } from '../spinner.service';
 import { OsdService } from '../osd.service';
-import { Rect, TiledImageOptions } from 'openseadragon';
+import { Point } from 'openseadragon';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { MatDialog } from '@angular/material/dialog';
 import { StopwatchService } from '../stopwatch.service';
 import { ChallengeService } from '../challenge.service';
+import { HintComponent } from '../hint/hint.component';
 
 @Component({
   selector: 'app-challenge',
@@ -18,8 +19,11 @@ import { ChallengeService } from '../challenge.service';
   styleUrls: ['./challenge.component.scss']
 })
 export class ChallengeComponent implements OnInit, OnDestroy {
+  private unsubscribe$ = new Subject<void>();
   challenge$: Observable<Challenge>;
   @ViewChild('viewer', { static: true }) viewerElement: ElementRef;
+  hint$: BehaviorSubject<string> = new BehaviorSubject<string>('...');
+  hintTicker$: Subject<string> = new Subject<string>();
 
   constructor(private route: ActivatedRoute,
               private challengeService: ChallengeService,
@@ -46,19 +50,12 @@ export class ChallengeComponent implements OnInit, OnDestroy {
       tap(challenge => this.challengeService.challenge = challenge),
       tap(challenge => this.loadChallenge(challenge)),
       tap(() => this.spinner.toggle(false)),
-      tap(challenge => {
-        const rect = new Rect(
-          3900,
-          2910,
-          100,
-          100,
-        );
-        // this.setAfikoman(challenge, rect);
-      })
     );
   }
 
   ngOnDestroy(): void {
+    this.unsubscribe$.next();
+    this.unsubscribe$.complete();
     this.osdService.destroy();
   }
 
@@ -68,16 +65,32 @@ export class ChallengeComponent implements OnInit, OnDestroy {
     this.osdService.loadTile(tile);
   }
 
-  private async setAfikoman(challenge: Challenge, rect: Rect) {
-    const docRef = this.db.doc(`challenges/${challenge.id}`);
-    const data: Partial<Challenge> = {
-      afikomanRect: { ...rect },
-      public: true,
-      photoCreditUrl: 'https://www.pexels.com/photo/school-colorful-figures-toys-2953771/',
-      photoCredit: 'Markus Spiske',
-      description: 'לגו',
-      level: 2
-    };
-    await docRef.update(data);
+  private onViewportChange(event: any) {
+    const viewportBounds = this.osdService.viewer.viewport.getBounds();
+    const point = new Point(
+      this.challengeService.challenge.afikomanRect.x,
+      this.challengeService.challenge.afikomanRect.y
+    );
+    const result = viewportBounds.containsPoint(point);
+    if (result) this.hint$.next('חם');
+    else this.hint$.next('קר');
+  }
+
+  onHint() {
+    this.stopWatch.toggleTimer();
+    const dialogRef = this.dialog.open(HintComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.stopWatch.multiplier = 2;
+        this.hintTicker$.next('...');
+        this.osdService.viewportChange$.pipe(
+          takeUntil(this.unsubscribe$),
+        ).subscribe(event => this.onViewportChange(event));
+        // TODO: fix this observable hell
+        setInterval(() => this.hintTicker$.next(this.hint$.getValue()), 2000);
+      }
+      this.stopWatch.toggleTimer();
+    });
   }
 }

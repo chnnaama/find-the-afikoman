@@ -29,6 +29,7 @@ export class OsdService {
   viewer: OpenSeadragon.Viewer;
   isLoaded$: BehaviorSubject<boolean> = new BehaviorSubject(false);
   canvasClick$: Subject<any> = new Subject();
+  viewportChange$: Subject<any> = new Subject();
   isClickQuick: boolean;
 
   constructor() { }
@@ -47,6 +48,10 @@ export class OsdService {
     this.viewer.addHandler('canvas-click', (event) => {
       this.isClickQuick = event.quick;
       this.canvasClick$.next(event);
+    });
+
+    this.viewer.addHandler('viewport-change', (event) => {
+      this.viewportChange$.next(event);
     });
   }
 

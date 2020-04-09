@@ -5,3 +5,9 @@
   <app-stopwatch [challenge]="challenge"></app-stopwatch>
 </ng-container>
 <div #viewer class="viewer"></div>
+<div class="utility-buttons">
+  <button mat-mini-fab (click)="onHint()" *ngIf="!(hintTicker$ | async)">רמז</button>
+  <button mat-mini-fab color="warn" *ngIf="hintTicker$ | async" class="tick-animation">
+    {{ hintTicker$ | async }}
+  </button>
+</div>

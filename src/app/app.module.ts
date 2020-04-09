@@ -25,6 +25,7 @@ import { ClipboardModule } from '@angular/cdk/clipboard';
 import { EditComponent } from './edit/edit.component';
 import { InstructionsComponent } from './edit/instructions/instructions.component';
 import { SuccessComponent } from './edit/success/success.component';
+import { HintComponent } from './hint/hint.component';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyCYoShQPGulpu95s253OKdA474M11VaXDw',
@@ -55,6 +56,7 @@ const firebaseConfig = {
     EditComponent,
     InstructionsComponent,
     SuccessComponent,
+    HintComponent,
   ],
   imports: [
     BrowserModule,
@@ -75,6 +77,7 @@ const firebaseConfig = {
     PauseComponent,
     InstructionsComponent,
     SuccessComponent,
+    HintComponent,
   ],
   bootstrap: [AppComponent]
 })
