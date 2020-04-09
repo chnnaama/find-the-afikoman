@@ -134,7 +134,7 @@ export class EditComponent implements OnInit, OnDestroy {
 
   async onFinish() {
     const challenge = this.challengeService.challenge;
-    // challenge.afikomanRect = { ...this.afikomanPlacement };
+    challenge.afikomanRect = { ...this.afikomanPlacement };
     // challenge.photoCredit = 'stock.adobe.com';
     // challenge.photoCreditUrl = 'https://stock.adobe.com';
     // challenge.description = 'הר רשמור, ארצות-הברית';
