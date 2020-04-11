@@ -6,9 +6,10 @@
 </ng-container>
 <div #viewer class="viewer"></div>
 <div class="utility-buttons">
-  <button mat-mini-fab (click)="onHint()" *ngIf="!(hintTicker$ | async)">רמז</button>
+  <button mat-mini-fab (click)="onHint()" *ngIf="!(hintTicker$ | async)" i18n>רמז</button>
   <ng-container *ngIf="hintTicker$ | async as hintTicker">
-    <button mat-mini-fab color="warn" class="tick-animation" [class.cold]="hintTicker === 'קר'">
+    <!--TODO: add i18n here:-->
+    <button mat-mini-fab color="warn" class="tick-animation" [class.cold]="hintTicker === 'קר'" >
       {{ hintTicker }}
     </button>
   </ng-container>

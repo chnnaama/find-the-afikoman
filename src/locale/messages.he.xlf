@@ -1,14 +1,214 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
-  <file original="ng2.template" datatype="plaintext" source-language="en" target-language="he">
+  <file original="ng2.template" datatype="plaintext" source-language="he-IL" target-language="he-IL">
     <body>
+      <trans-unit id="003bd799658c40508966a70dfbd0633773a42e40">
+        <source xml:lang="he-IL">רמז</source>
+        <target xml:lang="he-IL">רמז</target>
+      </trans-unit>
+      <trans-unit id="02cffd42ccfc55415dd81d504a96dd75d9a81ce8">
+        <source xml:lang="he-IL">מצאו בתמונה את האפיקומן ולחצו עליו</source>
+        <target xml:lang="he-IL">מצאו בתמונה את האפיקומן ולחצו עליו</target>
+      </trans-unit>
+      <trans-unit id="08373b8dae3ab1610ffd2e329d57c9ba92662cb2">
+        <source xml:lang="he-IL">
+  לא יעשה שום שימוש בתמונות מלבד למטרה שלשמה נועדו.
+</source>
+        <target xml:lang="he-IL">
+  לא יעשה שום שימוש בתמונות מלבד למטרה שלשמה נועדו.
+</target>
+      </trans-unit>
+      <trans-unit id="0a17ff377eeb7870ff1fe2590f5c05414df37060">
+        <source xml:lang="he-IL">צאו לדרך!</source>
+        <target xml:lang="he-IL">צאו לדרך!</target>
+      </trans-unit>
+      <trans-unit id="15316f988c4aa558802ee2cd8b30c280d249c228">
+        <source xml:lang="he-IL">
+  בכל מקרה הפעילו שיקול דעת בעת העלאת תמונות לשרת ציבורי.
+</source>
+        <target xml:lang="he-IL">
+  בכל מקרה הפעילו שיקול דעת בעת העלאת תמונות לשרת ציבורי.
+</target>
+      </trans-unit>
+      <trans-unit id="22505e91c43177a338dcc7fdeb4204001be97894">
+        <source xml:lang="he-IL">ביטול</source>
+        <target xml:lang="he-IL">ביטול</target>
+      </trans-unit>
+      <trans-unit id="28a16c3892b6e069014b8e314c8f17e04bd31a39">
+        <source xml:lang="he-IL">
+        אתגר שאני הכנתי
+      </source>
+        <target xml:lang="he-IL">
+        אתגר שאני הכנתי
+      </target>
+      </trans-unit>
+      <trans-unit id="2a57cdf054901c7a7da7ce0af2414c119b95dc5f">
+        <source xml:lang="he-IL">ועוד כמה הפתעות חדשות...</source>
+        <target xml:lang="he-IL">ועוד כמה הפתעות חדשות...</target>
+      </trans-unit>
+      <trans-unit id="312e8507934e82d32f1357d8a0285839fa7c828a">
+        <source xml:lang="he-IL">בחרו או צלמו תמונה והחביאו בה את האפיקומן</source>
+        <target xml:lang="he-IL">בחרו או צלמו תמונה והחביאו בה את האפיקומן</target>
+      </trans-unit>
+      <trans-unit id="31f0fb5d3cec4b5b513f45a60a0542a07e622060">
+        <source xml:lang="he-IL">כמה זמן יקח לך למצוא את האפיקומן?</source>
+        <target xml:lang="he-IL">כמה זמן יקח לך למצוא את האפיקומן?</target>
+      </trans-unit>
+      <trans-unit id="3e7fdf7a5f4ce580b40678824786f21926602f62">
+        <source xml:lang="he-IL">
+  <x id="START_TAG_MAT-ICON" ctype="x-mat-icon" equiv-text="&lt;mat-icon&gt;"/>file_upload<x id="CLOSE_TAG_MAT-ICON" ctype="x-mat-icon" equiv-text="&lt;/mat-icon&gt;"/>
+  בחירת תמונה
+</source>
+        <target xml:lang="he-IL">
+  <x id="START_TAG_MAT-ICON" ctype="x-mat-icon" equiv-text="&lt;mat-icon&gt;"/>file_upload<x id="CLOSE_TAG_MAT-ICON" ctype="x-mat-icon" equiv-text="&lt;/mat-icon&gt;"/>
+  בחירת תמונה
+</target>
+      </trans-unit>
+      <trans-unit id="3eda096349877b32fe0c3b4b8b6b3bc9f23f51d7">
+        <source xml:lang="he-IL">
+        צרו אתגר משלכם!
+      </source>
+        <target xml:lang="he-IL">
+        צרו אתגר משלכם!
+      </target>
+      </trans-unit>
+      <trans-unit id="45a43a1cf93a5181dbdf2da1a0318f57f887eed8">
+        <source xml:lang="he-IL">נראה כמה זמן יקח לך למצוא אותו.</source>
+        <target xml:lang="he-IL">נראה כמה זמן יקח לך למצוא אותו.</target>
+      </trans-unit>
+      <trans-unit id="5a75b6f98ce5be5948dfa92e2d1e68415da5ceca">
+        <source xml:lang="he-IL">pause</source>
+        <target xml:lang="he-IL">pause</target>
+      </trans-unit>
+      <trans-unit id="66cd32d684a4efc213f865a3cb40704a476e2b9a">
+        <source xml:lang="he-IL">כבר ויתרת?</source>
+        <target xml:lang="he-IL">כבר ויתרת?</target>
+      </trans-unit>
       <trans-unit id="7051f07c4dc4f72c4d5c0f759432d92fefd5469e">
-        <source xml:lang="en">חג שמח</source>
-        <target xml:lang="he">חג שמח</target>
+        <source xml:lang="he-IL">Holiday Greeting!</source>
+        <target xml:lang="he-IL">Holiday Greeting!</target>
+      </trans-unit>
+      <trans-unit id="7082ad1936f129c83f48f085a371c29738c7332f">
+        <source xml:lang="he-IL">
+    נרמוז לך חם/קר, אבל השעון ירוץ במהירות כפולה. סבבה?
+  </source>
+        <target xml:lang="he-IL">
+    נרמוז לך חם/קר, אבל השעון ירוץ במהירות כפולה. סבבה?
+  </target>
+      </trans-unit>
+      <trans-unit id="72253056daba0049710a70ad713e0a48657fc0c7">
+        <source xml:lang="he-IL">אתגר האפיקומן</source>
+        <target xml:lang="he-IL">אתגר האפיקומן</target>
+      </trans-unit>
+      <trans-unit id="7295bdab24e9b72dfbfbec86c514cf438800193e">
+        <source xml:lang="he-IL">צרו אתגר משלכם</source>
+        <target xml:lang="he-IL">צרו אתגר משלכם</target>
+      </trans-unit>
+      <trans-unit id="8333873b631fa2dda0682edb70559acba6acfa92">
+        <source xml:lang="he-IL">בחרו או צלמו תמונה והחביאו בה את האפיקומן:</source>
+        <target xml:lang="he-IL">בחרו או צלמו תמונה והחביאו בה את האפיקומן:</target>
+      </trans-unit>
+      <trans-unit id="88de8c0c89edf3192eb9275557ea2b6b98b1c59c">
+        <source xml:lang="he-IL">אתגרים נוספים</source>
+        <target xml:lang="he-IL">אתגרים נוספים</target>
+      </trans-unit>
+      <trans-unit id="965911d37cf0e6fdc75d0d3bb45469bd57790c11">
+        <source xml:lang="he-IL">כן 😔</source>
+        <target xml:lang="he-IL">כן 😔</target>
+      </trans-unit>
+      <trans-unit id="9713415284230d0466138441e6af00349c689eb7">
+        <source xml:lang="he-IL">
+        אתגרים נוספים יעלו במהלך חול המועד
+      </source>
+        <target xml:lang="he-IL">
+        אתגרים נוספים יעלו במהלך חול המועד
+      </target>
+      </trans-unit>
+      <trans-unit id="a11ec4e640f241329943237d2a3cceaa4823658e">
+        <source xml:lang="he-IL">add</source>
+        <target xml:lang="he-IL">add</target>
+      </trans-unit>
+      <trans-unit id="a78635494e93df6b2ba7eadb531b9e5fd77e4518">
+        <source xml:lang="he-IL">Sidenav content</source>
+        <target xml:lang="he-IL">Sidenav content</target>
+      </trans-unit>
+      <trans-unit id="afa26dd2e5481e1c9a0fc5db8cb355b66838e332">
+        <source xml:lang="he-IL">האתגר הזה מוצג רק לך. הכנסו בכדי לשתף.</source>
+        <target xml:lang="he-IL">האתגר הזה מוצג רק לך. הכנסו בכדי לשתף.</target>
+      </trans-unit>
+      <trans-unit id="b27277511d7e86c3822ac99d9b0bf1807e9d0166">
+        <source xml:lang="he-IL">קדימה!</source>
+        <target xml:lang="he-IL">קדימה!</target>
       </trans-unit>
       <trans-unit id="bc3bff14266d5656643349b2e3c156bd65efd63b">
-        <source xml:lang="en">There is an egg hiding In the picture ahead </source>
-        <target xml:lang="he">בתמונה שלפניך מסתתר אפיקומן:</target>
+        <source xml:lang="he-IL">בתמונה שלפניך מסתתר אפיקומן:</source>
+        <target xml:lang="he-IL">בתמונה שלפניך מסתתר אפיקומן:</target>
+      </trans-unit>
+      <trans-unit id="c1dac9df1df227e06926a53e2941a97d331372ed">
+        <source xml:lang="he-IL">play_arrow</source>
+        <target xml:lang="he-IL">play_arrow</target>
+      </trans-unit>
+      <trans-unit id="c4ff2254cfd4b11b65cba81bc7a6046b8002725d">
+        <source xml:lang="he-IL">לא! אני אצליח לבד</source>
+        <target xml:lang="he-IL">לא! אני אצליח לבד</target>
+      </trans-unit>
+      <trans-unit id="c560eaba225b91571988e29af86295fab7a8d4df">
+        <source xml:lang="he-IL">האתגר:</source>
+        <target xml:lang="he-IL">האתגר:</target>
+      </trans-unit>
+      <trans-unit id="c641f77d0ae4a3a7226d2bd76bc13d2af97da30d">
+        <source xml:lang="he-IL">בינוני</source>
+        <target xml:lang="he-IL">בינוני</target>
+      </trans-unit>
+      <trans-unit id="cb8aec7d2935c9de20fb675c7674fd57122375a3">
+        <source xml:lang="he-IL">קשה</source>
+        <target xml:lang="he-IL">קשה</target>
+      </trans-unit>
+      <trans-unit id="d2e8eec02622451edc0fe1edf3abf844eaece5ca">
+        <source xml:lang="he-IL">צילום: </source>
+        <target xml:lang="he-IL">צילום: </target>
+      </trans-unit>
+      <trans-unit id="d45347daf9171c7d00846a9a2abaede2e780f17d">
+        <source xml:lang="he-IL">קל</source>
+        <target xml:lang="he-IL">קל</target>
+      </trans-unit>
+      <trans-unit id="dae3f4c3b53d3c5d46ea6a1885dd156cfe382636">
+        <source xml:lang="he-IL"> מצאתי את האפיקומן ב-<x id="INTERPOLATION" equiv-text="{{ stopwatch.counter / 1000 |  number:'1.0-0' }}"/> שניות</source>
+        <target xml:lang="he-IL"> מצאתי את האפיקומן ב-<x id="INTERPOLATION" equiv-text="{{ stopwatch.counter / 1000 |  number:'1.0-0' }}"/> שניות</target>
+      </trans-unit>
+      <trans-unit id="db3e2f48b3fd02adb3246ecb85d6225c4dff05e0">
+        <source xml:lang="he-IL">חג שמח!</source>
+        <target xml:lang="he-IL">חג שמח!</target>
+      </trans-unit>
+      <trans-unit id="e01272656eb08fc69d50204388eaf601b7e444c8">
+        <source xml:lang="he-IL">You have find the egg in 
+-<x id="INTERPOLATION" equiv-text="{{ stopwatch.counter / 1000 |  number:'1.0-0' }}"/>  seconds
+  </source>
+        <target xml:lang="he-IL">You have find the egg in 
+-<x id="INTERPOLATION" equiv-text="{{ stopwatch.counter / 1000 |  number:'1.0-0' }}"/>  seconds
+  </target>
+      </trans-unit>
+      <trans-unit id="e4fdc7e7f4c4249c03c7cb1dbcaa233e24429355">
+        <source xml:lang="he-IL">
+    חומם בושל והוגש על ידי
+    <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>עידן כהן<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>
+  </source>
+        <target xml:lang="he-IL">
+    חומם בושל והוגש על ידי
+    <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>עידן כהן<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>
+  </target>
+      </trans-unit>
+      <trans-unit id="e6ca458f5f95c86ac009437435e4a204e0220060">
+        <source xml:lang="he-IL">שתפו</source>
+        <target xml:lang="he-IL">שתפו</target>
+      </trans-unit>
+      <trans-unit id="fbb57df3fc392c4b85f8021fff9efcd90e9f7cc2">
+        <source xml:lang="he-IL">מברוק!</source>
+        <target xml:lang="he-IL">מברוק!</target>
+      </trans-unit>
+      <trans-unit id="fe01585e3ad93c02c2547b2858def1f3b3074806">
+        <source xml:lang="he-IL">יצירת אתגר חדש</source>
+        <target xml:lang="he-IL">יצירת אתגר חדש</target>
       </trans-unit>
     </body>
   </file>

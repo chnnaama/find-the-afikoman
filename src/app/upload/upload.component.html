@@ -1,10 +1,10 @@
-<h1 class="mat-display-1">יצירת אתגר חדש</h1>
-<p>בחרו או צלמו תמונה והחביאו בה את האפיקומן:</p>
+<h1 class="mat-display-1" i18n>יצירת אתגר חדש</h1>
+<p i18n>בחרו או צלמו תמונה והחביאו בה את האפיקומן:</p>
 <app-material-uploader (uploadFinished)="onUploadFinished($event)"></app-material-uploader>
-<button mat-button color="warn" [routerLink]="'/'">ביטול</button>
-<p style="margin-top: 20px">
+<button mat-button color="warn" [routerLink]="'/'" i18n>ביטול</button>
+<p style="margin-top: 20px" i18n>
   לא יעשה שום שימוש בתמונות מלבד למטרה שלשמה נועדו.
 </p>
-<p>
+<p i18n>
   בכל מקרה הפעילו שיקול דעת בעת העלאת תמונות לשרת ציבורי.
 </p>

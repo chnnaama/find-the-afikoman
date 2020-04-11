@@ -5,7 +5,7 @@
   "projects": {
     "find-the-afikoman": {
       "i18n": {
-        "sourceLocale": "en-US",
+        "sourceLocale": "he-IL",
         "locales": {
           "he": "src/locale/messages.he.xlf",
           "en": "src/locale/messages.en.xlf"

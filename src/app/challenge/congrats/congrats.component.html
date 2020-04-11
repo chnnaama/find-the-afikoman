@@ -1,15 +1,15 @@
-<h1 mat-dialog-title>מברוק!</h1>
+<h1 mat-dialog-title i18n>מברוק!</h1>
 <div mat-dialog-content>
   <p>
     <img src="https://i.pinimg.com/originals/e1/59/f4/e159f454b9411d0e92b6395b52258606.gif" />
   </p>
-  <p style="margin-bottom: 16px">מצאת את האפיקומן ב-{{ stopwatch.counter / 1000 |  number:'1.0-0' }} שניות
+  <p style="margin-bottom: 16px" i18n>מצאת את האפיקומן ב-{{ stopwatch.counter / 1000 |  number:'1.0-0' }} שניות
   </p>
 
   <p>
-    <a mat-button [routerLink]="'/'" [mat-dialog-close]="">אתגרים נוספים</a>
+    <a mat-button [routerLink]="'/'" [mat-dialog-close]="" i18n>אתגרים נוספים</a>
     &nbsp;
-    <app-share-button
+    <app-share-button i18n-text
       text=" מצאתי את האפיקומן ב-{{ stopwatch.counter / 1000 |  number:'1.0-0' }} שניות"
       [url]="'https://afikoman.idancohen.com/challenge/' + challengeService.challenge.id"></app-share-button>
   </p>

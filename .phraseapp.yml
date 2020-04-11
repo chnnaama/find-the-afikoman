@@ -1,13 +1,12 @@
 phraseapp:
-  access_token: 20e5548a9caf519bb1c3f852e2985ace624938fd086106e999141c1e370a2450
+  access_token: 3800ee770566faf7bde9a1af255a5a9d7894202d3be0e7dc63a1ca7eeb4c81c9
   project_id: 97b3b80146a4fb863ef5fa2bc9b6b6ee
   push:
     sources:
-    - file: src/locale/messages.xlf
+    - file: ./src/locale/messages.xlf
       params:
         file_format: xlf
         update_translations: true
-        locale_id: he
   pull:
     targets:
       - file: ./src/locale/messages.he.xlf

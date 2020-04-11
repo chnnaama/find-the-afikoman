@@ -1,14 +1,7 @@
 {
   "targets": {
-    "find-the-afikoman": {
-      "hosting": {
-        "find-the-afikoman": [
-          "find-the-afikoman"
-        ]
-      }
-    }
   },
   "projects": {
-    "default": "find-the-afikoman"
+    "default": ""
   }
 }

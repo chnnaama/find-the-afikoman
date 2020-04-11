@@ -3,10 +3,10 @@
             *ngFor="let challenge of privateChallenges$ | async"
             (click)="openChallenge(challenge)">
     <mat-card-header>
-      <mat-card-title>
+      <mat-card-title i18n>
         אתגר שאני הכנתי
       </mat-card-title>
-      <mat-card-subtitle>האתגר הזה מוצג רק לך. הכנסו בכדי לשתף.</mat-card-subtitle>
+      <mat-card-subtitle i18n>האתגר הזה מוצג רק לך. הכנסו בכדי לשתף.</mat-card-subtitle>
     </mat-card-header>
     <img mat-card-image
          src="https://storage.googleapis.com/find-the-afikoman.appspot.com/images/{{challenge.uid}}/thumb@${{challenge.id}}.jpg"
@@ -19,9 +19,9 @@
     <mat-card-header>
       <mat-card-title>
         <span [ngSwitch]="challenge.level">
-          <span *ngSwitchCase="1">קל</span>
-          <span *ngSwitchCase="2">בינוני</span>
-          <span *ngSwitchCase="3">קשה</span>
+          <span *ngSwitchCase="1" i18n>קל</span>
+          <span *ngSwitchCase="2" i18n>בינוני</span>
+          <span *ngSwitchCase="3" i18n>קשה</span>
         </span>
       </mat-card-title>
       <mat-card-subtitle>{{ challenge.description }}</mat-card-subtitle>
@@ -33,35 +33,35 @@
   <mat-card class="challenge-card"
             (click)="createChallenge()">
     <mat-card-header>
-      <mat-card-title>
+      <mat-card-title i18n>
         אתגרים נוספים יעלו במהלך חול המועד
       </mat-card-title>
-      <mat-card-subtitle>ועוד כמה הפתעות חדשות...</mat-card-subtitle>
+      <mat-card-subtitle i18n>ועוד כמה הפתעות חדשות...</mat-card-subtitle>
     </mat-card-header>
   </mat-card>
   <mat-card class="challenge-card"
             (click)="createChallenge()">
     <mat-card-header>
-      <mat-card-title>
+      <mat-card-title i18n>
         צרו אתגר משלכם!
       </mat-card-title>
-      <mat-card-subtitle>בחרו או צלמו תמונה והחביאו בה את האפיקומן</mat-card-subtitle>
+      <mat-card-subtitle i18n>בחרו או צלמו תמונה והחביאו בה את האפיקומן</mat-card-subtitle>
     </mat-card-header>
     <p style="text-align: left;">
-      <button mat-flat-button color="accent">קדימה!</button>
+      <button mat-flat-button color="accent" i18n>קדימה!</button>
     </p>
   </mat-card>
 </div>
 
 <footer>
-  <p>
+  <p i18n>
     חומם בושל והוגש על ידי
     <a href="https://idancohen.com" target="_blank">עידן כהן</a>
   </p>
 </footer>
 
 <div class="utility-buttons">
-  <button mat-mini-fab matTooltip="צרו אתגר משלכם" (click)="createChallenge()">
-    <mat-icon>add</mat-icon>
+  <button mat-mini-fab i18n-matTooltip matTooltip="צרו אתגר משלכם" (click)="createChallenge()">
+    <mat-icon i18n>add</mat-icon>
   </button>
 </div>

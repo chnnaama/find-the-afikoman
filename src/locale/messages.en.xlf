@@ -1,14 +1,103 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
-  <file original="ng2.template" datatype="plaintext" source-language="en" target-language="en">
+  <file original="ng2.template" datatype="plaintext" source-language="he-IL" target-language="en">
     <body>
+      <trans-unit id="003bd799658c40508966a70dfbd0633773a42e40">
+        <source xml:lang="he-IL">רמז</source>
+        <target xml:lang="en">Clue </target>
+      </trans-unit>
+      <trans-unit id="22505e91c43177a338dcc7fdeb4204001be97894">
+        <source xml:lang="he-IL">ביטול</source>
+        <target xml:lang="en">Cancellation </target>
+      </trans-unit>
+      <trans-unit id="28a16c3892b6e069014b8e314c8f17e04bd31a39">
+        <source xml:lang="he-IL">
+        אתגר שאני הכנתי
+      </source>
+        <target xml:lang="en">a challenge I made </target>
+      </trans-unit>
+      <trans-unit id="312e8507934e82d32f1357d8a0285839fa7c828a">
+        <source xml:lang="he-IL">בחרו או צלמו תמונה והחביאו בה את האפיקומן</source>
+        <target xml:lang="en">Upload a photo, and hide an egg inside</target>
+      </trans-unit>
+      <trans-unit id="3eda096349877b32fe0c3b4b8b6b3bc9f23f51d7">
+        <source xml:lang="he-IL">
+        צרו אתגר משלכם!
+      </source>
+        <target xml:lang="en">Create your own challenge </target>
+      </trans-unit>
+      <trans-unit id="5a75b6f98ce5be5948dfa92e2d1e68415da5ceca">
+        <source xml:lang="he-IL">pause</source>
+        <target xml:lang="en">Pause </target>
+      </trans-unit>
+      <trans-unit id="66cd32d684a4efc213f865a3cb40704a476e2b9a">
+        <source xml:lang="he-IL">כבר ויתרת?</source>
+        <target xml:lang="en">Giving up?</target>
+      </trans-unit>
       <trans-unit id="7051f07c4dc4f72c4d5c0f759432d92fefd5469e">
-        <source xml:lang="en">חג שמח</source>
-        <target xml:lang="en">חג שמח</target>
+        <source xml:lang="he-IL">Holiday Greeting!</source>
+        <target xml:lang="en">Holiday Greeting!</target>
+      </trans-unit>
+      <trans-unit id="7295bdab24e9b72dfbfbec86c514cf438800193e">
+        <source xml:lang="he-IL">צרו אתגר משלכם</source>
+        <target xml:lang="en">Create your own challenge </target>
+      </trans-unit>
+      <trans-unit id="88de8c0c89edf3192eb9275557ea2b6b98b1c59c">
+        <source xml:lang="he-IL">אתגרים נוספים</source>
+        <target xml:lang="en">More challenges </target>
+      </trans-unit>
+      <trans-unit id="965911d37cf0e6fdc75d0d3bb45469bd57790c11">
+        <source xml:lang="he-IL">כן 😔</source>
+        <target xml:lang="en">Yes 😔 </target>
+      </trans-unit>
+      <trans-unit id="a11ec4e640f241329943237d2a3cceaa4823658e">
+        <source xml:lang="he-IL">add</source>
+        <target xml:lang="en">Add </target>
+      </trans-unit>
+      <trans-unit id="b27277511d7e86c3822ac99d9b0bf1807e9d0166">
+        <source xml:lang="he-IL">קדימה!</source>
+        <target xml:lang="en">Go!</target>
       </trans-unit>
       <trans-unit id="bc3bff14266d5656643349b2e3c156bd65efd63b">
-        <source xml:lang="en">There is an egg hiding In the picture ahead </source>
-        <target xml:lang="en">There is an egg hiding In the picture ahead </target>
+        <source xml:lang="he-IL">בתמונה שלפניך מסתתר אפיקומן:</source>
+        <target xml:lang="en">There is an egg hiding In the picture ahead</target>
+      </trans-unit>
+      <trans-unit id="c560eaba225b91571988e29af86295fab7a8d4df">
+        <source xml:lang="he-IL">האתגר:</source>
+        <target xml:lang="en">The Challenge </target>
+      </trans-unit>
+      <trans-unit id="c641f77d0ae4a3a7226d2bd76bc13d2af97da30d">
+        <source xml:lang="he-IL">בינוני</source>
+        <target xml:lang="en">Midrange </target>
+      </trans-unit>
+      <trans-unit id="d45347daf9171c7d00846a9a2abaede2e780f17d">
+        <source xml:lang="he-IL">קל</source>
+        <target xml:lang="en">Easy </target>
+      </trans-unit>
+      <trans-unit id="db3e2f48b3fd02adb3246ecb85d6225c4dff05e0">
+        <source xml:lang="he-IL">חג שמח!</source>
+        <target xml:lang="en">Holiday Greeting! </target>
+      </trans-unit>
+      <trans-unit id="e01272656eb08fc69d50204388eaf601b7e444c8">
+        <source xml:lang="he-IL">You have find the egg in 
+-<x id="INTERPOLATION" equiv-text="{{ stopwatch.counter / 1000 |  number:'1.0-0' }}"/>  seconds
+  </source>
+        <target xml:lang="en">You have find the egg in-<x id="INTERPOLATION" equiv-text="{{ stopwatch.counter / 1000 | number:'1.0-0' }}"/> seconds</target>
+      </trans-unit>
+      <trans-unit id="e4fdc7e7f4c4249c03c7cb1dbcaa233e24429355">
+        <source xml:lang="he-IL">
+    חומם בושל והוגש על ידי
+    <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>עידן כהן<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>
+  </source>
+        <target xml:lang="en">Made by <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>Idan Cohen<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/></target>
+      </trans-unit>
+      <trans-unit id="e6ca458f5f95c86ac009437435e4a204e0220060">
+        <source xml:lang="he-IL">שתפו</source>
+        <target xml:lang="en">Share </target>
+      </trans-unit>
+      <trans-unit id="fe01585e3ad93c02c2547b2858def1f3b3074806">
+        <source xml:lang="he-IL">יצירת אתגר חדש</source>
+        <target xml:lang="en">Create new challenge </target>
       </trans-unit>
     </body>
   </file>
