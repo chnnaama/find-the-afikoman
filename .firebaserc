@@ -1,7 +1,14 @@
 {
-  "targets": {
-  },
   "projects": {
-    "default": ""
+    "default": "easter-egg-hunt-online"
+  },
+  "targets": {
+    "easter-egg-hunt-online": {
+      "hosting": {
+        "easter-egg-hunt-online": [
+          "easter-egg-hunt-online"
+        ]
+      }
+    }
   }
 }

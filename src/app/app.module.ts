@@ -35,7 +35,7 @@ const firebaseConfig = {
   apiKey: 'AIzaSyB4iObVhimtSdx6toQqhox-6hs3QjUAvI8',
   authDomain: 'easter-egg-hunt-online.firebaseapp.com',
   databaseURL: 'https://easter-egg-hunt-online.firebaseio.com',
-  projectId: 'easter-eg.firebaserc fileg-hunt-online',
+  projectId: 'easter-egg-hunt-online',
   storageBucket: 'easter-egg-hunt-online.appspot.com',
   messagingSenderId: '1050225342636',
   appId: '1:1050225342636:web:2a65cad5286dfd9affc709',
