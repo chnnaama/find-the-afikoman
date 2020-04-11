@@ -1,14 +1,14 @@
 {
+  "projects": {
+    "default": "easter-egg-hunt-online"
+  },
   "targets": {
-    "find-the-afikoman": {
+    "easter-egg-hunt-online": {
       "hosting": {
-        "find-the-afikoman": [
-          "find-the-afikoman"
+        "easter-egg-hunt-online": [
+          "easter-egg-hunt-online"
         ]
       }
     }
-  },
-  "projects": {
-    "default": "find-the-afikoman"
   }
 }
