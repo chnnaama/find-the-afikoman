@@ -32,14 +32,14 @@ import { HintComponent } from './hint/hint.component';
 // the second parameter 'he-IL' is optional
 // registerLocaleData(localeHe, 'he-IL');
 const firebaseConfig = {
-  apiKey: 'AIzaSyCYoShQPGulpu95s253OKdA474M11VaXDw',
-  authDomain: 'find-the-afikoman.firebaseapp.com',
-  databaseURL: 'https://find-the-afikoman.firebaseio.com',
-  projectId: 'find-the-afikoman',
-  storageBucket: 'find-the-afikoman.appspot.com',
-  messagingSenderId: '723683717092',
-  appId: '1:723683717092:web:94b44e66162cda03e921f1',
-  measurementId: 'G-4YFKQLNWDV'
+  apiKey: 'AIzaSyB4iObVhimtSdx6toQqhox-6hs3QjUAvI8',
+  authDomain: 'easter-egg-hunt-online.firebaseapp.com',
+  databaseURL: 'https://easter-egg-hunt-online.firebaseio.com',
+  projectId: 'easter-egg-hunt-online',
+  storageBucket: 'easter-egg-hunt-online.appspot.com',
+  messagingSenderId: '1050225342636',
+  appId: '1:1050225342636:web:2a65cad5286dfd9affc709',
+  measurementId: 'G-ETP5TFL1DN'
 };
 
 @NgModule({
