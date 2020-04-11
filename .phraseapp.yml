@@ -1,0 +1,22 @@
+phraseapp:
+  access_token: 20e5548a9caf519bb1c3f852e2985ace624938fd086106e999141c1e370a2450
+  project_id: 97b3b80146a4fb863ef5fa2bc9b6b6ee
+  push:
+    sources:
+    - file: src/locale/messages.xlf
+      params:
+        file_format: xlf
+        update_translations: true
+        locale_id: he
+  pull:
+    targets:
+      - file: ./src/locale/messages.he.xlf
+        params:
+          file_format: xlf
+          convert_emoji: true
+          locale_id: he
+      - file: ./src/locale/messages.en.xlf
+        params:
+          file_format: xlf
+          convert_emoji: true
+          locale_id: en

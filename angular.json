@@ -4,6 +4,13 @@
   "newProjectRoot": "projects",
   "projects": {
     "find-the-afikoman": {
+      "i18n": {
+        "sourceLocale": "en-US",
+        "locales": {
+          "he": "src/locale/messages.he.xlf",
+          "en": "src/locale/messages.en.xlf"
+        }
+      },
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -61,6 +68,12 @@
                   "maximumError": "10kb"
                 }
               ]
+            },
+            "he": {
+              "localize": ["he"]
+            },
+            "en": {
+              "localize": ["en"]
             }
           }
         },
@@ -72,6 +85,12 @@
           "configurations": {
             "production": {
               "browserTarget": "find-the-afikoman:build:production"
+            },
+            "he": {
+              "browserTarget": "find-the-afikoman:build:he"
+            },
+            "en": {
+              "browserTarget": "find-the-afikoman:build:en"
             }
           }
         },

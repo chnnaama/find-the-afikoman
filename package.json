@@ -4,10 +4,14 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "start:he": "ng serve --configuration=he --port='4201'",
+    "start:en": "ng serve --configuration=en --port='4202'",
     "build": "ng build",
+    "build:localize": "ng build --localize",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "int:extract": "ng xi18n --output-path src/locale"
   },
   "private": true,
   "dependencies": {
@@ -18,6 +22,7 @@
     "@angular/core": "~9.1.0",
     "@angular/fire": "^6.0.0",
     "@angular/forms": "~9.1.0",
+    "@angular/localize": "^9.1.1",
     "@angular/material": "^9.2.0",
     "@angular/platform-browser": "~9.1.0",
     "@angular/platform-browser-dynamic": "~9.1.0",

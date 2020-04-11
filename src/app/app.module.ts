@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { registerLocaleData } from '@angular/common';
+import localeHe from '@angular/common/locales/he';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -27,6 +29,8 @@ import { InstructionsComponent } from './edit/instructions/instructions.componen
 import { SuccessComponent } from './edit/success/success.component';
 import { HintComponent } from './hint/hint.component';
 
+// the second parameter 'he-IL' is optional
+// registerLocaleData(localeHe, 'he-IL');
 const firebaseConfig = {
   apiKey: 'AIzaSyCYoShQPGulpu95s253OKdA474M11VaXDw',
   authDomain: 'find-the-afikoman.firebaseapp.com',

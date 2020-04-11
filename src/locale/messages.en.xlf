@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file original="ng2.template" datatype="plaintext" source-language="en" target-language="en">
+    <body>
+      <trans-unit id="7051f07c4dc4f72c4d5c0f759432d92fefd5469e">
+        <source xml:lang="en">חג שמח</source>
+        <target xml:lang="en">חג שמח</target>
+      </trans-unit>
+      <trans-unit id="bc3bff14266d5656643349b2e3c156bd65efd63b">
+        <source xml:lang="en">There is an egg hiding In the picture ahead </source>
+        <target xml:lang="en">There is an egg hiding In the picture ahead </target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

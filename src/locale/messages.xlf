@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en-US" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="7051f07c4dc4f72c4d5c0f759432d92fefd5469e" datatype="html">
+        <source>Holiday Greeting!</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/challenge/welcome/welcome.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="bc3bff14266d5656643349b2e3c156bd65efd63b" datatype="html">
+        <source>בתמונה שלפניך מסתתר אפיקומן:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/challenge/welcome/welcome.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="45a43a1cf93a5181dbdf2da1a0318f57f887eed8" datatype="html">
+        <source>נראה כמה זמן יקח לך למצוא אותו.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/challenge/welcome/welcome.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="0a17ff377eeb7870ff1fe2590f5c05414df37060" datatype="html">
+        <source>צאו לדרך!</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/challenge/welcome/welcome.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
