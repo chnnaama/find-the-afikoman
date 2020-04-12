@@ -41,7 +41,7 @@ export class TestComponent implements OnInit {
   private loadTile(url: any) {
 
     const tiledImageOptions: TiledImageOptions = {
-      tileSource: 'https://storage.googleapis.com/find-the-afikoman.appspot.com/default-pictures/dzi@aerial-architecture-blue-sky-buildings-466685.jpg.dzi',
+      tileSource: 'https://storage.googleapis.com/easter-egg-hunt-online.appspot.com/default-pictures/dzi@aerial-architecture-blue-sky-buildings-466685.jpg.dzi',
       fitBounds: new Rect(0, 0, 5833, 3620 ),
       preload: true,
       // loadTilesWithAjax: true,

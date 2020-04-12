@@ -11,7 +11,7 @@ export class ChallengeService {
   constructor() { }
 
   generateTile(challenge: Challenge) {
-    const tileSource = `https://storage.googleapis.com/find-the-afikoman.appspot.com/images/${challenge.uid}/dzi@${challenge.id}.jpg.dzi`;
+    const tileSource = `https://storage.googleapis.com/easter-egg-hunt-online.appspot.com/images/${challenge.uid}/dzi@${challenge.id}.jpg.dzi`;
     const tiledImageOptions: TiledImageOptions = {
       tileSource,
       fitBounds: new Rect(0, 0, challenge.width, challenge.height ),
