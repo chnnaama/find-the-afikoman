@@ -28,6 +28,7 @@ import { EditComponent } from './edit/edit.component';
 import { InstructionsComponent } from './edit/instructions/instructions.component';
 import { SuccessComponent } from './edit/success/success.component';
 import { HintComponent } from './hint/hint.component';
+import { AngularFireAnalyticsModule } from '@angular/fire/analytics';
 
 // the second parameter 'he-IL' is optional
 // registerLocaleData(localeHe, 'he-IL');
@@ -67,6 +68,7 @@ const firebaseConfig = {
     AppRoutingModule,
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireAnalyticsModule,
     AngularFirestoreModule,
     AngularFireAuthModule,
     AngularFireStorageModule,
