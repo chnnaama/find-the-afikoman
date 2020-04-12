@@ -180,6 +180,10 @@
           <context context-type="sourcefile">src/app/list/list.component.html</context>
           <context context-type="linenumber">65</context>
         </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/edit/edit.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
       </trans-unit>
       <trans-unit id="7295bdab24e9b72dfbfbec86c514cf438800193e" datatype="html">
         <source>צרו אתגר משלכם</source>
@@ -314,6 +318,70 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/share-button/share-button.component.html</context>
           <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="41d439c3e0035067c443d6c51cfb30723efe6d68" datatype="html">
+        <source>יצירת אתגר</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/edit/instructions/instructions.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="cbe02ba306d4f8a739a5c1e1e2c3a7d923c55512" datatype="html">
+        <source>
+      להזזת האפיקומן יש ללחוץ על הנקודה בתמונה בה תרצו להחביא את האפיקומן.
+    </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/edit/instructions/instructions.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="246aa112245437b4a5c6c0fc7a5d545b1b31aaa2" datatype="html">
+        <source>
+      לשינוי גודל האפיקומן יש ללחוץ על כפתורי הפלוס והמינוס בראש העמוד.
+    </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/edit/instructions/instructions.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9810e78d0128e3bf316b0276184091c4adbeb58c" datatype="html">
+        <source>
+      לסיום יש ללחוץ על כפתור
+      <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>סיימתי<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>,
+      ואז ניתן לשתף את האתגר.
+    </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/edit/instructions/instructions.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="bb215bb9943a84a7a4b9a271248a32c61ffd767b" datatype="html">
+        <source>אפשר להתחיל</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/edit/instructions/instructions.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4da487aec5a29ce4372e7b512227cd665b01fe6f" datatype="html">
+        <source>remove</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/edit/edit.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5ecc2b6454b68f6583f0b53c82d88c45edcaa041" datatype="html">
+        <source>help</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/edit/edit.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="75b812335817a23decf37b879c059bee4973dc85" datatype="html">
+        <source>סיימתי</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/edit/edit.component.html</context>
+          <context context-type="linenumber">21</context>
         </context-group>
       </trans-unit>
     </body>

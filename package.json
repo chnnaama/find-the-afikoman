@@ -8,11 +8,11 @@
     "start:en": "ng serve --configuration=en --port='4202'",
     "build": "ng build",
     "build:localize": "ng build --localize",
-    "firebase:deploy": "firebase deploy",
+    "firebase:deploy": "npm build:localize && firebase deploy",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "int:extract": "ng xi18n --output-path src/locale",
+    "i18n": "ng xi18n --output-path src/locale && npm phraseapp:push",
     "phraseapp:push": "phraseapp push",
     "phraseapp:pull": "phraseapp pull"
   },
