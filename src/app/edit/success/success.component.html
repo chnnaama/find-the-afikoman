@@ -1,12 +1,12 @@
-<h1 mat-dialog-title>אפיקומן נולד!</h1>
+<h1 mat-dialog-title i18n>אפיקומן נולד!</h1>
 <div mat-dialog-content>
-  <p>עכשיו אפשר לשתף את האתגר החדש שיצרת עם חברים ובני משפחה.</p>
+  <p i18n>עכשיו אפשר לשתף את האתגר החדש שיצרת עם חברים ובני משפחה.</p>
 </div>
 <div mat-dialog-actions>
-  <a mat-button [routerLink]="'/'" [mat-dialog-close]="">חזרה לרשימת אתגרים</a>
+  <a mat-button [routerLink]="'/'" [mat-dialog-close]="" i18n>חזרה לרשימת אתגרים</a>
   &nbsp;
-  <app-share-button
+  <app-share-button i18n-text
     text="החבאתי את האפיקומן. תצליחו למצוא?"
-    [url]="'https://afikoman.idancohen.com/challenge/' + challengeService.challenge.id"></app-share-button>
+    [url]="'https://egghunt.online/challenge/' + challengeService.challenge.id"></app-share-button>
 
 </div>

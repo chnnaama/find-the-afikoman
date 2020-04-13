@@ -1,10 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Rubik, "Helvetica Neue", sans-serif; direction: rtl; }
+body { margin: 0; font-family: Rubik, "Helvetica Neue", sans-serif; direction: ltr; }
 
 mat-dialog-container, snack-bar-container {
-  direction: rtl;
+  direction: ltr;
 }
 
 @import '~@angular/material/theming';
@@ -12,7 +12,7 @@ mat-dialog-container, snack-bar-container {
 // Define a custom typography config that overrides the font-family as well as the
 // `headlines` and `body-1` levels.
 $custom-typography: mat-typography-config(
-  $font-family: 'Rubik, sans-serif',
+  $font-family: 'Rubik, sans-serif'
 );
 
 @include angular-material-typography($custom-typography);

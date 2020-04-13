@@ -6,6 +6,16 @@
         <source xml:lang="he-IL">רמז</source>
         <target xml:lang="en">Clue </target>
       </trans-unit>
+      <trans-unit id="08373b8dae3ab1610ffd2e329d57c9ba92662cb2">
+        <source xml:lang="he-IL">
+  לא יעשה שום שימוש בתמונות מלבד למטרה שלשמה נועדו.
+</source>
+        <target xml:lang="en">We do not use any images except for the purpose for which they were intended.</target>
+      </trans-unit>
+      <trans-unit id="0a17ff377eeb7870ff1fe2590f5c05414df37060">
+        <source xml:lang="he-IL">צאו לדרך!</source>
+        <target xml:lang="en">Go!</target>
+      </trans-unit>
       <trans-unit id="22505e91c43177a338dcc7fdeb4204001be97894">
         <source xml:lang="he-IL">ביטול</source>
         <target xml:lang="en">Cancellation </target>
@@ -16,9 +26,17 @@
       </source>
         <target xml:lang="en">a challenge I made </target>
       </trans-unit>
+      <trans-unit id="2a57cdf054901c7a7da7ce0af2414c119b95dc5f">
+        <source xml:lang="he-IL">ועוד כמה הפתעות חדשות...</source>
+        <target xml:lang="en">And some new surprises ...</target>
+      </trans-unit>
       <trans-unit id="312e8507934e82d32f1357d8a0285839fa7c828a">
         <source xml:lang="he-IL">בחרו או צלמו תמונה והחביאו בה את האפיקומן</source>
         <target xml:lang="en">Upload a photo, and hide an egg inside</target>
+      </trans-unit>
+      <trans-unit id="31f0fb5d3cec4b5b513f45a60a0542a07e622060">
+        <source xml:lang="he-IL">כמה זמן יקח לך למצוא את האפיקומן?</source>
+        <target xml:lang="en">How long does it take you to find the egg?</target>
       </trans-unit>
       <trans-unit id="3eda096349877b32fe0c3b4b8b6b3bc9f23f51d7">
         <source xml:lang="he-IL">
@@ -38,9 +56,17 @@
         <source xml:lang="he-IL">Holiday Greeting!</source>
         <target xml:lang="en">Holiday Greeting!</target>
       </trans-unit>
+      <trans-unit id="72253056daba0049710a70ad713e0a48657fc0c7">
+        <source xml:lang="he-IL">אתגר האפיקומן</source>
+        <target xml:lang="en">Easter Egg Hunt Challenge </target>
+      </trans-unit>
       <trans-unit id="7295bdab24e9b72dfbfbec86c514cf438800193e">
         <source xml:lang="he-IL">צרו אתגר משלכם</source>
         <target xml:lang="en">Create your own challenge </target>
+      </trans-unit>
+      <trans-unit id="8333873b631fa2dda0682edb70559acba6acfa92">
+        <source xml:lang="he-IL">בחרו או צלמו תמונה והחביאו בה את האפיקומן:</source>
+        <target xml:lang="en">Upload or take a photo and hide the egg:</target>
       </trans-unit>
       <trans-unit id="88de8c0c89edf3192eb9275557ea2b6b98b1c59c">
         <source xml:lang="he-IL">אתגרים נוספים</source>
@@ -50,9 +76,19 @@
         <source xml:lang="he-IL">כן 😔</source>
         <target xml:lang="en">Yes 😔 </target>
       </trans-unit>
+      <trans-unit id="9713415284230d0466138441e6af00349c689eb7">
+        <source xml:lang="he-IL">
+        אתגרים נוספים יעלו במהלך חול המועד
+      </source>
+        <target xml:lang="en">More challenges will come up soon</target>
+      </trans-unit>
       <trans-unit id="a11ec4e640f241329943237d2a3cceaa4823658e">
         <source xml:lang="he-IL">add</source>
         <target xml:lang="en">Add </target>
+      </trans-unit>
+      <trans-unit id="a78635494e93df6b2ba7eadb531b9e5fd77e4518">
+        <source xml:lang="he-IL">Sidenav content</source>
+        <target xml:lang="en">Sidenav content</target>
       </trans-unit>
       <trans-unit id="b27277511d7e86c3822ac99d9b0bf1807e9d0166">
         <source xml:lang="he-IL">קדימה!</source>
@@ -61,6 +97,10 @@
       <trans-unit id="bc3bff14266d5656643349b2e3c156bd65efd63b">
         <source xml:lang="he-IL">בתמונה שלפניך מסתתר אפיקומן:</source>
         <target xml:lang="en">There is an egg hiding In the picture ahead</target>
+      </trans-unit>
+      <trans-unit id="c4ff2254cfd4b11b65cba81bc7a6046b8002725d">
+        <source xml:lang="he-IL">לא! אני אצליח לבד</source>
+        <target xml:lang="en">No! I am going to make it!</target>
       </trans-unit>
       <trans-unit id="c560eaba225b91571988e29af86295fab7a8d4df">
         <source xml:lang="he-IL">האתגר:</source>
@@ -73,6 +113,10 @@
       <trans-unit id="d45347daf9171c7d00846a9a2abaede2e780f17d">
         <source xml:lang="he-IL">קל</source>
         <target xml:lang="en">Easy </target>
+      </trans-unit>
+      <trans-unit id="dae3f4c3b53d3c5d46ea6a1885dd156cfe382636">
+        <source xml:lang="he-IL"> מצאתי את האפיקומן ב-<x id="INTERPOLATION" equiv-text="{{ stopwatch.counter / 1000 |  number:'1.0-0' }}"/> שניות</source>
+        <target xml:lang="en">You have found the egg in <x id="INTERPOLATION" equiv-text="{{ stopwatch.counter / 1000 | number:'1.0-0' }}"/>  seconds </target>
       </trans-unit>
       <trans-unit id="db3e2f48b3fd02adb3246ecb85d6225c4dff05e0">
         <source xml:lang="he-IL">חג שמח!</source>
@@ -94,6 +138,10 @@
       <trans-unit id="e6ca458f5f95c86ac009437435e4a204e0220060">
         <source xml:lang="he-IL">שתפו</source>
         <target xml:lang="en">Share </target>
+      </trans-unit>
+      <trans-unit id="fbb57df3fc392c4b85f8021fff9efcd90e9f7cc2">
+        <source xml:lang="he-IL">מברוק!</source>
+        <target xml:lang="en">Mazel Tov!</target>
       </trans-unit>
       <trans-unit id="fe01585e3ad93c02c2547b2858def1f3b3074806">
         <source xml:lang="he-IL">יצירת אתגר חדש</source>
